@@ -44,7 +44,7 @@ export default function Home() {
                 </>
               ) : (
                 <div className={`response-message ${attendance}`} role="status">
-                  <span>{attendance === "yes" ? "✓" : "—"}</span>
+                  <span>{attendance === "yes" ? "♥" : "—"}</span>
                   <strong>{attendance === "yes" ? "تم تأكيد حضوركم" : "وصلنا اعتذاركم"}</strong>
                   <p>{attendance === "yes" ? "بحضوركم تكتمل فرحتنا، ننتظركم بكل محبة." : "نقدّر اعتذاركم، ونسأل الله أن يجمعنا بكم على خير."}</p>
                   <button onClick={() => setAttendance("")}>تعديل الرد</button>

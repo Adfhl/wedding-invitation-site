@@ -1991,6 +1991,7 @@ body { margin: 0; background: #e9dfcf; }
 .response-message { color: #737373; }
 .response-message > span { background: #a28270; }
 .response-message.no > span { background: #85817d; }
+.response-message.yes > span { font-family: Georgia, serif; font-size: 17px; line-height: 1; }
 
 .is-open .cover-card { transform: translateY(-3%) scale(.99); }
 
