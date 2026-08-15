@@ -1,4 +1,12 @@
-// Intentionally empty by default.
-// Add Drizzle tables here when the site actually needs a database.
-// See examples/d1/db/schema.ts for an opt-in example.
-export {};
+import { sql } from "drizzle-orm";
+import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+
+export const guests = sqliteTable("guests", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  name: text("name").notNull(),
+  phone: text("phone").notNull().default(""),
+  attendance: text("attendance", { enum: ["yes", "no"] }).notNull(),
+  companions: integer("companions").notNull().default(0),
+  note: text("note").notNull().default(""),
+  createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+});

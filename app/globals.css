@@ -563,6 +563,44 @@ fieldset legend { margin-bottom: 10px; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+/* RSVP persistence and attendance dashboard */
+.rsvp-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 20px; background: rgba(45,38,31,.56); backdrop-filter: blur(8px); }
+.rsvp-dialog { position: relative; width: min(100%, 470px); padding: 34px; color: #75685e; background: #fbf7f0; border: 1px solid #dfd0bd; box-shadow: 0 28px 80px rgba(55,43,35,.2); text-align: right; }
+.rsvp-dialog::before { content: ""; position: absolute; inset: 9px; border: 1px solid rgba(174,142,119,.22); pointer-events: none; }
+.rsvp-close { position: absolute; top: 12px; left: 14px; z-index: 2; border: 0; background: none; color: #8c7d71; font-size: 28px; cursor: pointer; }
+.rsvp-heart { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; margin: 0 auto 12px; color: #fff; background: #aa8a77; }
+.rsvp-dialog h2 { margin: 0; text-align: center; font-size: 30px; font-weight: 700; }
+.rsvp-dialog > p { margin: 5px 0 24px; text-align: center; color: #95887e; }
+.rsvp-dialog label { position: relative; display: grid; gap: 7px; margin-top: 14px; }
+.rsvp-dialog label span { font-weight: 700; }
+.rsvp-dialog label small { color: #aaa098; font-weight: 400; }
+.rsvp-dialog input, .rsvp-dialog select, .rsvp-dialog textarea { width: 100%; border: 1px solid #dfd6cc; padding: 12px 14px; color: #655a52; background: rgba(255,255,255,.7); outline: 0; resize: vertical; }
+.rsvp-dialog input:focus, .rsvp-dialog select:focus, .rsvp-dialog textarea:focus { border-color: #aa8a77; box-shadow: 0 0 0 3px rgba(170,138,119,.1); }
+.rsvp-save { position: relative; width: 100%; margin-top: 20px; padding: 14px; border: 0; color: white; background: #aa8a77; cursor: pointer; font-weight: 700; }
+.rsvp-save:disabled { opacity: .55; }
+.rsvp-error { color: #9d4d48 !important; font-size: 13px; }
+
+.admin-login, .attendance-dashboard { min-height: 100svh; font-family: "Huwiya", sans-serif; background: #f4eee5; color: #64584f; }
+.admin-login { display: grid; place-items: center; padding: 24px; }
+.admin-login form { width: min(100%, 410px); padding: 42px; text-align: center; border: 1px solid #ddcfbd; background: #fbf8f2; box-shadow: 0 24px 70px rgba(80,62,48,.1); }
+.admin-login img { width: 105px; height: 62px; object-fit: contain; margin-bottom: 20px; }
+.admin-login span { color: #aa8a77; font-size: 14px; }.admin-login h1 { margin: 5px 0; font-size: 32px; }.admin-login p { margin: 0 0 24px; color: #9a8e84; }
+.admin-login input { width: 100%; padding: 14px; text-align: center; border: 1px solid #d8cab9; background: white; outline: 0; }.admin-login small { display: block; margin-top: 8px; color: #9d4d48; }
+.admin-login button { width: 100%; margin-top: 14px; padding: 14px; border: 0; color: white; background: #aa8a77; cursor: pointer; }
+.attendance-dashboard { padding: clamp(24px, 5vw, 64px); }
+.attendance-dashboard > header { max-width: 1180px; margin: 0 auto 34px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.attendance-dashboard header span { color: #aa8a77; }.attendance-dashboard header h1 { margin: 5px 0; font-size: clamp(34px, 5vw, 54px); }.attendance-dashboard header p { margin: 0; color: #94877c; }
+.attendance-dashboard header button { border: 1px solid #cdb9a4; padding: 11px 18px; color: #765f50; background: transparent; cursor: pointer; }
+.attendance-stats { max-width: 1180px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.attendance-stats article { min-height: 155px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #dfd2c3; background: #fcf9f4; }
+.attendance-stats article.primary { color: white; background: #a88774; border-color: #a88774; }.attendance-stats span { font-size: 14px; }.attendance-stats strong { font-size: 48px; line-height: 1; }.attendance-stats small { opacity: .7; }
+.guest-list { max-width: 1180px; margin: 18px auto 0; padding: 26px; border: 1px solid #dfd2c3; background: #fcf9f4; }
+.guest-list-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 22px; }.guest-list-heading span { color: #aa8a77; font-size: 13px; }.guest-list-heading h2 { margin: 4px 0 0; }.guest-list-heading b { color: #a88774; }
+.guest-table-wrap { overflow-x: auto; }table { width: 100%; border-collapse: collapse; min-width: 820px; }th, td { padding: 15px 12px; text-align: right; border-bottom: 1px solid #ece3d8; font-size: 13px; }th { color: #998b7e; font-weight: 500; }td strong { font-size: 14px; }
+.attendance-badge { display: inline-flex; min-width: 62px; justify-content: center; padding: 5px 9px; border-radius: 20px; }.attendance-badge.yes { color: #52715b; background: #e5efe6; }.attendance-badge.no { color: #96625e; background: #f4e8e6; }.empty-guests { padding: 70px 20px; text-align: center; color: #a09387; }
+@media (max-width: 800px) { .attendance-stats { grid-template-columns: 1fr 1fr; }.attendance-dashboard > header { align-items: start; flex-direction: column; }.rsvp-dialog { padding: 30px 24px; } }
+@media (max-width: 480px) { .attendance-stats { grid-template-columns: 1fr; }.attendance-dashboard { padding: 24px 14px; }.guest-list { padding: 18px 14px; } }
+
 /* Formal invitation direction — square card, restrained ornament, classical type */
 :root {
   --olive-950: #20271f;
