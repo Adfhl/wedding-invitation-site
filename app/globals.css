@@ -2559,3 +2559,9 @@ body { margin: 0; background: #e9dfcf; }
   .inside-monogram { margin-top: 31px; }
   .inline-rsvp { margin-bottom: 52px; }
 }
+
+/* V23 — transparent supplied artwork needs no background blending */
+.inside-monogram img,
+.inside-ornament {
+  mix-blend-mode: normal;
+}
