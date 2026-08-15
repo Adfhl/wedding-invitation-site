@@ -2621,17 +2621,17 @@ body { margin: 0; background: #e9dfcf; }
 
 .inside-monogram img {
   top: 50%;
-  left: -43px;
+  left: -32px;
   width: 160px;
   transform: translateY(-50%);
 }
 
 @media (max-width: 520px) {
   .inside-monogram { width: 104px; height: 62px; }
-  .inside-monogram img { left: -39px; width: 144px; }
+  .inside-monogram img { left: -29px; width: 144px; }
 }
 
 @media (max-height: 650px) {
   .inside-monogram { width: 88px; height: 52px; }
-  .inside-monogram img { left: -33px; width: 122px; }
+  .inside-monogram img { left: -24px; width: 122px; }
 }
