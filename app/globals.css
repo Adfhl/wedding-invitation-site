@@ -2615,23 +2615,23 @@ body { margin: 0; background: #e9dfcf; }
 
 /* V25 — reveal the complete transparent monogram without clipping */
 .inside-monogram {
-  width: 160px;
-  height: 92px;
+  width: 116px;
+  height: 68px;
 }
 
 .inside-monogram img {
   top: 50%;
-  left: -60px;
-  width: 220px;
+  left: -43px;
+  width: 160px;
   transform: translateY(-50%);
 }
 
 @media (max-width: 520px) {
-  .inside-monogram { width: 144px; height: 82px; }
-  .inside-monogram img { left: -54px; width: 198px; }
+  .inside-monogram { width: 104px; height: 62px; }
+  .inside-monogram img { left: -39px; width: 144px; }
 }
 
 @media (max-height: 650px) {
-  .inside-monogram { width: 120px; height: 66px; }
-  .inside-monogram img { left: -45px; width: 165px; }
+  .inside-monogram { width: 88px; height: 52px; }
+  .inside-monogram img { left: -33px; width: 122px; }
 }
