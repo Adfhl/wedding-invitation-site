@@ -1904,3 +1904,111 @@ body { margin: 0; background: #e9dfcf; }
   .inline-rsvp { padding-top: 9px; }
   .rsvp-actions button { min-height: 56px; }
 }
+
+/* V12 — visual language of the supplied beige engagement story */
+.invitation-page {
+  background:
+    radial-gradient(circle at 17% 12%, rgba(255,255,255,.5), transparent 34%),
+    linear-gradient(145deg, #eee7dc 0%, #e6ddd0 48%, #f3ede4 100%);
+}
+.invitation-experience { width: min(420px, 92vw); filter: drop-shadow(0 24px 42px rgba(76,67,56,.14)); }
+.cover-card,
+.inside-card {
+  color: #737373;
+  background:
+    radial-gradient(circle at 68% 9%, rgba(255,255,255,.72), transparent 25%),
+    radial-gradient(circle at 22% 72%, rgba(194,177,155,.12), transparent 30%),
+    repeating-linear-gradient(12deg, transparent 0 6px, rgba(117,104,88,.018) 6px 6.5px),
+    #f4eee5;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 1px rgba(132,118,101,.06);
+}
+.cover-card::before {
+  opacity: .18;
+  background:
+    linear-gradient(100deg, transparent 0 38%, rgba(255,255,255,.45) 49%, transparent 60%),
+    repeating-linear-gradient(92deg, transparent 0 4px, rgba(117,104,88,.025) 4px 4.5px);
+}
+.theme-opening,
+.theme-monogram,
+.theme-diamond,
+.theme-date,
+.theme-couple,
+.theme-prayer,
+.theme-invite,
+.theme-open-seal,
+.tap-label { position: absolute; z-index: 2; left: 50%; transform: translateX(-50%); width: 84%; text-align: center; }
+.theme-opening { top: 14%; font-size: 18px; font-weight: 400; letter-spacing: .01em; }
+.theme-monogram {
+  top: 22%;
+  font-size: clamp(115px, 20vh, 155px);
+  line-height: 1;
+  color: #a28270;
+  font-weight: 400;
+  letter-spacing: -.2em;
+  transform: translateX(-47%);
+}
+.theme-diamond { top: 43%; color: #a28270; font-size: 15px; }
+.theme-date { top: 49%; font-size: 15px; letter-spacing: .22em; direction: ltr; color: #77736e; }
+.theme-couple { top: 55%; font-size: 17px; font-weight: 500; }
+.theme-couple i { margin-inline: 5px; font-style: normal; font-size: .9em; }
+.theme-prayer { top: 65%; font-size: 19px; line-height: 1.85; font-weight: 500; }
+.theme-invite { top: 82%; font-size: 21px; font-weight: 600; }
+.theme-open-seal {
+  top: 91%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border: 1px solid rgba(162,130,112,.55);
+  border-radius: 50%;
+  color: #9a7b69;
+  background: rgba(244,238,229,.72);
+  box-shadow: 0 7px 18px rgba(100,80,65,.08), inset 0 0 0 4px #f4eee5, inset 0 0 0 5px rgba(162,130,112,.18);
+}
+.theme-open-seal b,
+.theme-open-seal i { font-size: 17px; font-weight: 400; font-style: normal; }
+.tap-label { bottom: 1.8%; font-size: 9px; color: rgba(115,115,115,.66); }
+
+.inside-frame { inset: 0; padding: 38px 30px 28px; border: 0; }
+.inside-frame::before { display: none; }
+.inside-ornament { color: #a28270; font-size: 16px; }
+.inside-kicker { color: #77736e; font-size: 15px; }
+.inside-blessing { font-size: 14px; color: #737373; }
+.inside-names { margin: 20px 0 10px; color: #a28270; font-size: 48px; }
+.inside-names i { color: #77736e; }
+.inside-copy { color: #737373; font-size: 14px; }
+.inside-details { border-color: rgba(115,115,115,.18); }
+.inside-details div { border-color: rgba(115,115,115,.13); }
+.inside-details strong { color: #696865; }
+.inside-details span { color: #82807c; }
+.inline-rsvp > p { font-size: 16px; color: #666563; }
+.rsvp-actions button { border-radius: 0; min-height: 70px; }
+.rsvp-actions .accept { border-color: #a28270; color: #fff; background: #a28270; box-shadow: 0 9px 20px rgba(125,94,78,.12); }
+.rsvp-actions .decline { border-color: rgba(115,115,115,.24); color: #737373; background: rgba(255,255,255,.28); }
+.response-message { color: #737373; }
+.response-message > span { background: #a28270; }
+.response-message.no > span { background: #85817d; }
+
+.is-open .cover-card { transform: translateY(-3%) scale(.99); }
+
+@media (max-width: 520px) {
+  .theme-opening { font-size: 16px; }
+  .theme-monogram { font-size: 118px; }
+  .theme-prayer { font-size: 17px; }
+  .theme-invite { font-size: 19px; }
+  .inside-names { font-size: 41px; }
+}
+
+@media (max-height: 650px) {
+  .theme-opening { top: 10%; }
+  .theme-monogram { top: 17%; font-size: 105px; }
+  .theme-diamond { top: 39%; }
+  .theme-date { top: 45%; }
+  .theme-couple { top: 51%; }
+  .theme-prayer { top: 61%; font-size: 16px; }
+  .theme-invite { top: 78%; font-size: 18px; }
+  .theme-open-seal { top: 89%; width: 42px; height: 42px; }
+}

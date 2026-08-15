@@ -58,16 +58,15 @@ export default function Home() {
           aria-label="فتح دعوة فيصل وابتسام"
           disabled={opened}
         >
-          <span className="cover-frame" />
-          <span className="cover-branch" />
-          <span className="cover-mark">❦</span>
-          <span className="cover-label">دعوة ملكة</span>
-          <span className="cover-title"><b>فيصل</b><i>و</i><b>ابتسام</b></span>
-          <span className="cover-line">✦</span>
-          <span className="cover-message">يسرّنا دعوتكم لمشاركتنا<br />فرحة عقد قران</span>
-          <span className="silk-ribbon" />
-          <span className="olive-seal"><b>ف</b><i>ا</i><small>❧</small></span>
-          <span className="tap-label">اضغط على الختم لفتح الدعوة</span>
+          <span className="theme-opening">تم بحمد الله ونعمته عقد قران</span>
+          <span className="theme-monogram" aria-hidden="true">فـا</span>
+          <span className="theme-diamond" aria-hidden="true">◆</span>
+          <span className="theme-date">22 · 10 · 2030</span>
+          <span className="theme-couple">فيصل <i>&amp;</i> ابتسام</span>
+          <span className="theme-prayer">اللهم اجعله عقدًا تنعقد به سعادتنا<br />وارزقنا التمام الجميل</span>
+          <span className="theme-invite">حضوركم يتمّم فرحتنا</span>
+          <span className="theme-open-seal"><b>ف</b><i>ا</i></span>
+          <span className="tap-label">اضغط لفتح الدعوة</span>
         </button>
       </section>
     </main>
