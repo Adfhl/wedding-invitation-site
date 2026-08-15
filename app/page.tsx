@@ -13,7 +13,7 @@ export default function Home() {
       <section className={`invitation-experience ${opened ? "is-open" : ""}`} aria-label="دعوة حفل ملكة فيصل وابتسام">
         <article className="inside-card" aria-hidden={!opened}>
           <div className="inside-frame">
-            <span className="inside-ornament" aria-hidden="true">❦</span>
+            <img className="inside-symbol" src="/reference-monogram.png" alt="" />
             <p className="inside-kicker">دعوة حفل ملكة</p>
             <p className="inside-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
 
@@ -59,14 +59,13 @@ export default function Home() {
           disabled={opened}
         >
           <span className="theme-opening">تم بحمد الله ونعمته عقد قران</span>
-          <span className="theme-monogram" aria-hidden="true">فـا</span>
+          <img className="theme-monogram" src="/reference-monogram.png" alt="" />
           <span className="theme-diamond" aria-hidden="true">◆</span>
           <span className="theme-date">22 · 10 · 2030</span>
           <span className="theme-couple">فيصل <i>&amp;</i> ابتسام</span>
           <span className="theme-prayer">اللهم اجعله عقدًا تنعقد به سعادتنا<br />وارزقنا التمام الجميل</span>
           <span className="theme-invite">حضوركم يتمّم فرحتنا</span>
-          <span className="theme-open-seal"><b>ف</b><i>ا</i></span>
-          <span className="tap-label">اضغط لفتح الدعوة</span>
+          <span className="tap-label">اضغط لعرض تفاصيل الدعوة</span>
         </button>
       </section>
     </main>

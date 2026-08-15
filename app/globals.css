@@ -2012,3 +2012,61 @@ body { margin: 0; background: #e9dfcf; }
   .theme-invite { top: 78%; font-size: 18px; }
   .theme-open-seal { top: 89%; width: 42px; height: 42px; }
 }
+
+/* V13 — exact supplied motif and restrained in-place transition */
+.invitation-page,
+.cover-card,
+.inside-card,
+.rsvp-actions button { font-family: "Huwiya", sans-serif; }
+.invitation-experience { perspective: none; filter: none; }
+.cover-card {
+  transition: opacity .52s cubic-bezier(.4,0,.2,1), filter .52s cubic-bezier(.4,0,.2,1);
+  transform: none;
+  transform-origin: center;
+}
+.cover-card::after { display: none; }
+.theme-monogram {
+  top: 23%;
+  width: 78%;
+  height: auto;
+  max-height: 29%;
+  object-fit: contain;
+  letter-spacing: 0;
+  transform: translateX(-50%);
+}
+.theme-opening { top: 13%; font-size: 17px; font-weight: 400; }
+.theme-diamond { top: 45.5%; }
+.theme-date { top: 50.5%; }
+.theme-couple { top: 56%; }
+.theme-prayer { top: 66%; font-size: 18px; line-height: 1.8; }
+.theme-invite { top: 84%; font-size: 20px; }
+.tap-label { bottom: 3%; font-size: 10px; }
+.theme-open-seal { display: none; }
+
+.inside-card {
+  transform: none;
+  filter: blur(5px);
+  transition: opacity .52s cubic-bezier(.4,0,.2,1) .18s, filter .52s cubic-bezier(.4,0,.2,1) .18s;
+}
+.inside-symbol { width: 96px; height: 58px; object-fit: contain; margin-bottom: 3px; }
+.inside-ornament { display: none; }
+.is-open .cover-card {
+  transform: none;
+  opacity: 0;
+  filter: blur(5px);
+}
+.is-open .inside-card {
+  transform: none;
+  opacity: 1;
+  filter: blur(0);
+}
+.cover-card:active { opacity: .86; }
+
+@media (max-height: 650px) {
+  .theme-monogram { top: 20%; width: 70%; }
+  .theme-diamond { top: 42%; }
+  .theme-date { top: 47%; }
+  .theme-couple { top: 53%; }
+  .theme-prayer { top: 62%; }
+  .theme-invite { top: 80%; }
+}
