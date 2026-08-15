@@ -633,3 +633,176 @@ fieldset legend { margin-bottom: 10px; }
   .invitation-stage { min-height: 500px; }
   .is-open .invitation-card { transform: translate(-50%, -9%) scale(1); }
 }
+
+/* V4 — a formal sealed folio rather than a box/envelope */
+.invitation-stage {
+  perspective: none;
+  isolation: isolate;
+}
+
+.envelope {
+  background: #eee5d5;
+  border: 1px solid rgba(154,118,67,.5);
+  box-shadow: 0 28px 65px rgba(48,58,46,.18);
+  overflow: visible;
+}
+
+.envelope::before,
+.envelope::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 7;
+}
+
+.envelope::before {
+  inset: 10px;
+  border: 1px solid rgba(48,58,46,.44);
+}
+
+.envelope::after {
+  inset: 17px;
+  border: 1px solid rgba(154,118,67,.24);
+}
+
+.envelope-back,
+.paper-lining {
+  background: #eee5d5;
+  box-shadow: none;
+}
+
+.door {
+  overflow: hidden;
+  background: #eee5d5;
+  border: 0;
+  opacity: 1;
+  filter: none;
+  transition:
+    transform .76s cubic-bezier(.45,0,.16,1),
+    opacity .42s ease .34s,
+    box-shadow .5s ease;
+}
+
+.door::before {
+  background:
+    radial-gradient(circle at 50% 100%, rgba(154,118,67,.09), transparent 42%),
+    linear-gradient(100deg, rgba(255,255,255,.48), transparent 38%),
+    #eee5d5;
+  box-shadow: none;
+}
+
+.door::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(48,58,46,.48);
+  box-shadow: inset 0 0 0 6px #eee5d5, inset 0 0 0 7px rgba(154,118,67,.26);
+}
+
+.door i {
+  display: none;
+}
+
+.door b,
+.door small {
+  position: absolute;
+  z-index: 3;
+  color: var(--olive-900);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.door b {
+  top: 39%;
+  font-size: clamp(36px, 7vw, 54px);
+}
+
+.door small {
+  top: calc(39% + 62px);
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.door-right b,
+.door-right small { right: 52px; }
+.door-left b,
+.door-left small { left: 52px; }
+
+.door-right {
+  border-left: 1px solid rgba(154,118,67,.18);
+  transform-origin: center;
+}
+
+.door-left {
+  border-right: 1px solid rgba(154,118,67,.18);
+  transform-origin: center;
+}
+
+.is-open .door-right {
+  transform: translateX(96%);
+  opacity: 0;
+  filter: none;
+  box-shadow: -20px 12px 40px rgba(48,58,46,.08);
+}
+
+.is-open .door-left {
+  transform: translateX(-96%);
+  opacity: 0;
+  filter: none;
+  box-shadow: 20px 12px 40px rgba(48,58,46,.08);
+}
+
+.wax-seal {
+  width: 82px;
+  height: 82px;
+  top: 50%;
+  background:
+    radial-gradient(circle at 38% 30%, rgba(255,255,255,.16) 0 4%, transparent 5%),
+    radial-gradient(circle, #566044 0 38%, #465039 62%, #323c2c 82%);
+  box-shadow:
+    0 8px 20px rgba(32,39,31,.28),
+    inset 2px 3px 5px rgba(255,255,255,.15),
+    inset -4px -5px 8px rgba(20,25,20,.24);
+  transition: transform .32s cubic-bezier(.3,.8,.25,1.25), opacity .24s ease .08s;
+}
+
+.seal-rim { inset: 10px; border-color: rgba(219,200,158,.6); }
+.is-open .wax-seal { transform: translate(-50%, -50%) scale(.56); opacity: 0; }
+
+.invitation-card {
+  opacity: 0;
+  transform: translate(-50%, -3%) scale(.965);
+  transition:
+    transform .68s cubic-bezier(.2,.78,.2,1) .23s,
+    opacity .38s ease .2s,
+    box-shadow .5s ease .25s;
+}
+
+.is-open .invitation-card {
+  opacity: 1;
+  transform: translate(-50%, -12%) scale(1);
+}
+
+.is-open .envelope {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  transition: border-color .2s ease .55s, background .2s ease .55s, box-shadow .3s ease .45s;
+}
+
+.is-open .envelope::before,
+.is-open .envelope::after,
+.is-open .envelope-back,
+.is-open .paper-lining {
+  opacity: 0;
+  transition: opacity .22s ease .48s;
+}
+
+@media (max-width: 640px) {
+  .door b { top: 38%; font-size: 36px; }
+  .door small { top: calc(38% + 48px); font-size: 9px; }
+  .door-right b, .door-right small { right: 28px; }
+  .door-left b, .door-left small { left: 28px; }
+  .wax-seal { width: 70px; height: 70px; }
+  .is-open .invitation-card { transform: translate(-50%, -9%) scale(1); }
+}

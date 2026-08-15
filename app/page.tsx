@@ -72,8 +72,8 @@ export default function Home() {
           >
             <span className="envelope-back" />
             <span className="paper-lining" />
-            <span className="door door-right"><i /></span>
-            <span className="door door-left"><i /></span>
+            <span className="door door-right"><i /><b>دعوة</b><small>بكل الحب</small></span>
+            <span className="door door-left"><i /><b>زفاف</b><small>نتشرّف بحضوركم</small></span>
             <span className="wax-seal">
               <span className="seal-rim" />
               <span className="seal-letter">ع</span>
