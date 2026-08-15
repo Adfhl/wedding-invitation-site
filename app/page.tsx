@@ -74,6 +74,7 @@ export default function Home() {
             <span className="paper-lining" />
             <span className="door door-right"><i /><b>دعوة</b><small>بكل الحب</small></span>
             <span className="door door-left"><i /><b>زفاف</b><small>نتشرّف بحضوركم</small></span>
+            <span className="stamp-date">22 · 10 · 2030</span>
             <span className="wax-seal">
               <span className="seal-rim" />
               <span className="seal-letter">ع</span>

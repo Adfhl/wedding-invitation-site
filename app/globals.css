@@ -806,3 +806,246 @@ fieldset legend { margin-bottom: 10px; }
   .wax-seal { width: 70px; height: 70px; }
   .is-open .invitation-card { transform: translate(-50%, -9%) scale(1); }
 }
+
+/* V5 — tactile postage-stamp cover and earthy editorial palette */
+:root {
+  --olive-950: #242b23;
+  --olive-900: #343d32;
+  --olive-800: #4a5646;
+  --olive-700: #65715e;
+  --sage: #8c9482;
+  --beige-50: #eee7d4;
+  --beige-100: #e7dec7;
+  --beige-200: #d8cbae;
+  --beige-300: #c3ad83;
+  --gold: #8d704d;
+  --gold-light: #b89b6e;
+  --ink: #30291f;
+  --paper-brown: #5a4637;
+  --paper-brown-deep: #48372c;
+}
+
+.hero {
+  color: #eee7d4;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(255,255,255,.055) 0 1px, transparent 1.5px) 0 0 / 9px 9px,
+    radial-gradient(circle at 80% 70%, rgba(0,0,0,.045) 0 1px, transparent 1.5px) 0 0 / 11px 11px,
+    linear-gradient(145deg, #624e3e, #514031 58%, #49392e);
+}
+
+.hero::before {
+  border-color: rgba(231,222,199,.22);
+  box-shadow: inset 0 0 0 7px transparent, inset 0 0 0 8px rgba(231,222,199,.06);
+}
+
+.eyebrow, .intro h1, .intro p { color: #eee7d4; }
+.eyebrow { opacity: .78; }
+.eyebrow::before, .eyebrow::after { background: #c3ad83; }
+.intro h1 i { color: #c3ad83; }
+.intro p { opacity: .68; }
+
+.envelope-shadow {
+  background: rgba(22,16,12,.5);
+  filter: blur(34px);
+}
+
+.envelope {
+  width: min(470px, 82vw);
+  height: min(470px, 82vw);
+  border: 0;
+  background: #eee7d4;
+  box-shadow: 0 30px 70px rgba(24,17,12,.32);
+  isolation: isolate;
+}
+
+.envelope::before {
+  inset: 0;
+  z-index: 12;
+  border: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 0 20px, var(--paper-brown) 0 10px, transparent 10.5px) left top / 100% 42px repeat-y,
+    radial-gradient(circle at 100% 20px, var(--paper-brown) 0 10px, transparent 10.5px) right top / 100% 42px repeat-y,
+    radial-gradient(circle at 20px 0, var(--paper-brown) 0 10px, transparent 10.5px) left top / 42px 100% repeat-x,
+    radial-gradient(circle at 20px 100%, var(--paper-brown) 0 10px, transparent 10.5px) left bottom / 42px 100% repeat-x;
+  opacity: 1;
+}
+
+.envelope::after {
+  inset: 22px;
+  z-index: 11;
+  border: 0;
+  background:
+    radial-gradient(circle, var(--paper-brown) 0 2px, transparent 2.5px) left top / 22px 6px repeat-x,
+    radial-gradient(circle, var(--paper-brown) 0 2px, transparent 2.5px) left bottom / 22px 6px repeat-x,
+    radial-gradient(circle, var(--paper-brown) 0 2px, transparent 2.5px) left top / 6px 22px repeat-y,
+    radial-gradient(circle, var(--paper-brown) 0 2px, transparent 2.5px) right top / 6px 22px repeat-y;
+  opacity: .9;
+}
+
+.envelope-back,
+.paper-lining { display: none; }
+
+.door {
+  top: 36px;
+  bottom: 54px;
+  width: calc(50% - 36px);
+  background-image: url("/wedding-editorial-v1.png");
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-color: #a28e70;
+  z-index: 5;
+  transition:
+    transform .92s cubic-bezier(.65,0,.18,1),
+    opacity .42s ease .42s,
+    filter .65s ease;
+}
+
+.door::before,
+.door::after,
+.door i,
+.door b,
+.door small { display: none; }
+
+.door-right {
+  right: 36px;
+  background-position: right center;
+  border: 0;
+}
+
+.door-left {
+  left: 36px;
+  background-position: left center;
+  border: 0;
+}
+
+.stamp-date {
+  position: absolute;
+  z-index: 14;
+  left: auto;
+  right: 34px;
+  bottom: 16px;
+  transform: rotate(-2deg);
+  color: var(--paper-brown);
+  font-family: Georgia, serif;
+  font-size: 15px;
+  letter-spacing: .12em;
+  direction: ltr;
+  transition: opacity .26s ease .18s, transform .55s ease;
+}
+
+.wax-seal {
+  z-index: 15;
+  width: 68px;
+  height: 68px;
+  top: auto;
+  bottom: 25px;
+  left: 50%;
+  background: radial-gradient(circle, #506047 0 38%, #3e4c38 64%, #2e392a 82%);
+  box-shadow: 0 7px 15px rgba(30,23,17,.32), inset 2px 3px 5px rgba(255,255,255,.13), inset -4px -5px 8px rgba(20,25,20,.24);
+}
+
+.seal-letter { font-size: 35px; }
+.seal-rim { inset: 8px; }
+
+.is-open .door-right {
+  transform: translateX(72%) rotate(2deg) scale(.96);
+  opacity: 0;
+  filter: blur(1.5px);
+}
+
+.is-open .door-left {
+  transform: translateX(-72%) rotate(-2deg) scale(.96);
+  opacity: 0;
+  filter: blur(1.5px);
+}
+
+.is-open .stamp-date {
+  opacity: 0;
+  transform: translateY(8px) rotate(-2deg);
+}
+
+.is-open .wax-seal {
+  transform: translate(-50%, 0) rotate(-8deg) scale(.62);
+  opacity: 0;
+}
+
+.invitation-card {
+  bottom: 62px;
+  width: min(470px, 82vw);
+  background:
+    linear-gradient(100deg, rgba(255,255,255,.4), transparent 32%),
+    #eee7d4;
+  box-shadow: 0 28px 68px rgba(24,17,12,.26);
+  opacity: 0;
+  transform: translate(-50%, 3%) scale(.92) rotate(-.6deg);
+  transition:
+    transform .78s cubic-bezier(.18,.78,.2,1) .3s,
+    opacity .4s ease .26s,
+    box-shadow .55s ease .3s;
+}
+
+.is-open .invitation-card {
+  opacity: 1;
+  transform: translate(-50%, -8%) scale(1) rotate(0deg);
+}
+
+.card-border {
+  background: rgba(238,231,212,.72);
+  border-color: rgba(72,55,44,.62);
+  outline-color: rgba(141,112,77,.32);
+}
+.card-border::before, .card-border::after { background: #eee7d4; color: #8d704d; }
+
+.open-hint { color: #eee7d4; }
+.open-hint i { border-color: rgba(238,231,212,.5); }
+
+.rsvp-section {
+  color: #30291f;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(90,70,55,.035) 0 1px, transparent 1.5px) 0 0 / 10px 10px,
+    #eee7d4;
+}
+.rsvp-section::before { border-color: rgba(90,70,55,.12); box-shadow: 0 0 0 80px rgba(90,70,55,.025), 0 0 0 160px rgba(90,70,55,.018); }
+.section-heading span, .section-heading h2 { color: #4b593f; }
+.section-heading p { color: rgba(48,41,31,.65); }
+.rsvp-form, .success-card {
+  color: #30291f;
+  background: rgba(255,252,244,.55);
+  border-color: rgba(90,70,55,.28);
+  box-shadow: 0 24px 65px rgba(74,55,40,.12);
+  backdrop-filter: none;
+}
+.field > span, fieldset legend { color: #3d4838; }
+.field small { color: rgba(48,41,31,.5); }
+.field input, .field textarea, .field select {
+  color: #30291f;
+  background: rgba(255,255,255,.42);
+  border-color: rgba(90,70,55,.22);
+}
+.field input::placeholder, .field textarea::placeholder { color: rgba(48,41,31,.4); }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: #65715e; background: rgba(255,255,255,.68); }
+.attendance-options label { border-color: rgba(90,70,55,.2); }
+.attendance-options label:hover, .attendance-options label.selected { border-color: #65715e; background: rgba(101,113,94,.1); }
+.attendance-options strong { color: #30291f; }
+.attendance-options small { color: rgba(48,41,31,.5); }
+.option-icon { color: #4b593f; border-color: rgba(75,89,63,.38); }
+.submit-rsvp { color: #eee7d4; background: #4b593f; border-color: #4b593f; }
+.submit-rsvp:hover:not(:disabled) { background: #5a4637; border-color: #5a4637; }
+.success-icon { color: #4b593f; border-color: #4b593f; }
+.success-card p { color: rgba(48,41,31,.64); }
+.success-card button { color: #4b593f; border-color: #4b593f; }
+.rsvp-section footer { color: #5a4637; }
+
+@media (max-width: 640px) {
+  .envelope, .invitation-card { width: min(84vw, 360px); }
+  .envelope { height: min(84vw, 360px); }
+  .door { top: 30px; bottom: 46px; width: calc(50% - 30px); }
+  .door-right { right: 30px; }
+  .door-left { left: 30px; }
+  .stamp-date { bottom: 12px; font-size: 12px; }
+  .wax-seal { width: 58px; height: 58px; bottom: 19px; }
+  .seal-letter { font-size: 29px; }
+  .invitation-card { bottom: 76px; }
+  .is-open .invitation-card { transform: translate(-50%, -6%) scale(1); }
+}
