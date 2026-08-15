@@ -2568,8 +2568,9 @@ body { margin: 0; background: #e9dfcf; }
 
 /* V24 — place ornaments in the marked upper and lower spaces */
 .inside-frame > .inside-ornament {
-  position: absolute;
+  position: absolute !important;
   left: 50%;
+  flex: none;
   transform: translateX(-50%);
 }
 
@@ -2589,25 +2590,25 @@ body { margin: 0; background: #e9dfcf; }
 }
 
 .inside-frame > .ornament-bottom {
-  bottom: 48px;
-  width: 270px;
-  height: 92px;
+  bottom: 5px;
+  width: 230px;
+  height: 58px;
   opacity: .62;
 }
 
-.inside-monogram { margin-top: 154px; }
+.inside-monogram { flex: none; margin-top: 154px; }
 .inline-rsvp { margin-bottom: 142px; }
 
 @media (max-width: 520px) {
   .inside-frame > .ornament-top { top: 52px; width: 250px; height: 108px; }
-  .inside-frame > .ornament-bottom { bottom: 36px; width: 226px; height: 78px; }
+  .inside-frame > .ornament-bottom { bottom: 4px; width: 204px; height: 52px; }
   .inside-monogram { margin-top: 128px; }
   .inline-rsvp { margin-bottom: 116px; }
 }
 
 @media (max-height: 650px) {
   .inside-frame > .ornament-top { top: 35px; width: 195px; height: 78px; }
-  .inside-frame > .ornament-bottom { bottom: 25px; width: 178px; height: 58px; }
+  .inside-frame > .ornament-bottom { bottom: 3px; width: 164px; height: 42px; }
   .inside-monogram { margin-top: 88px; }
   .inline-rsvp { margin-bottom: 82px; }
 }
