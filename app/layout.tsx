@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "دعوة زفاف عمر وعبير",
-  description: "بكل الحب ندعوكم لمشاركتنا ليلة العمر والفرح.",
+  title: "دعوة حفل ملكة فيصل وابتسام",
+  description: "بكل الحب ندعوكم لمشاركتنا فرحة حفل ملكة فيصل وابتسام.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

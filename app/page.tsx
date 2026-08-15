@@ -26,13 +26,13 @@ export default function Home() {
 
   return (
     <main dir="rtl">
-      <section className={`hero ${opened ? "is-open" : ""}`} aria-label="دعوة زفاف عمر وعبير">
+      <section className={`hero ${opened ? "is-open" : ""}`} aria-label="دعوة حفل ملكة فيصل وابتسام">
         <div className="botanical botanical-one" aria-hidden="true" />
         <div className="botanical botanical-two" aria-hidden="true" />
 
         <header className="intro">
           <span className="eyebrow">بكل الحب ندعوكم</span>
-          <h1>عُمر <i>&amp;</i> عبير</h1>
+          <h1>فيصل <i>&amp;</i> ابتسام</h1>
           <p>{opened ? "تشرفنا مشاركتكم فرحتنا" : "اضغط على الختم لفتح الدعوة"}</p>
         </header>
 
@@ -42,14 +42,14 @@ export default function Home() {
           <article className="invitation-card" aria-hidden={!opened}>
             <div className="card-border">
               <div className="formal-heading">
-                <span>دعوة زفاف</span>
+                <span>دعوة حفل ملكة</span>
                 <i aria-hidden="true">◆</i>
               </div>
               <p className="blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
-              <div className="couple-names" aria-label="عمر وعبير">
-                <span>عُمر</span><b>&amp;</b><span>عبير</span>
+              <div className="couple-names" aria-label="فيصل وابتسام">
+                <span>فيصل</span><b>&amp;</b><span>ابتسام</span>
               </div>
-              <p className="invite-copy">يسرّنا دعوتكم لمشاركتنا فرحة الزفاف</p>
+              <p className="invite-copy">يسرّنا دعوتكم لمشاركتنا فرحة حفل الملكة</p>
               <div className="date-row">
                 <div><strong>الأحد</strong><span>12 ربيع الآخر 1449هـ</span></div>
                 <div className="date-mark"><span>22</span><b>10</b><span>2030</span></div>
@@ -72,8 +72,8 @@ export default function Home() {
           >
             <span className="envelope-back" />
             <span className="paper-lining" />
-            <span className="door door-right"><i /><b>دعوة</b><small>بكل الحب</small></span>
-            <span className="door door-left"><i /><b>زفاف</b><small>نتشرّف بحضوركم</small></span>
+            <span className="door door-right"><i /><b>حفل</b><small>بكل الحب</small></span>
+            <span className="door door-left"><i /><b>ملكة</b><small>نتشرّف بحضوركم</small></span>
             <span className="stamp-date">22 · 10 · 2030</span>
             <span className="wax-seal">
               <span className="seal-rim" />
@@ -141,7 +141,7 @@ export default function Home() {
               )}
 
               <label className="field">
-                <span>رسالة للعروسين <small>(اختياري)</small></span>
+                <span>رسالة لفيصل وابتسام <small>(اختياري)</small></span>
                 <textarea name="message" placeholder="اكتب تهنئتك الجميلة هنا" rows={3} />
               </label>
 
@@ -149,7 +149,7 @@ export default function Home() {
             </form>
           )}
         </div>
-        <footer><span>عُمر</span><i>&amp;</i><span>عبير</span></footer>
+        <footer><span>فيصل</span><i>&amp;</i><span>ابتسام</span></footer>
       </section>
     </main>
   );
