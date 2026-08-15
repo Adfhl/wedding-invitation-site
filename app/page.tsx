@@ -52,20 +52,19 @@ export default function Home() {
         </article>
 
         <button
-          className="cover-card"
+          className="fabric-cover"
           type="button"
           onClick={() => setOpened(true)}
           aria-label="فتح دعوة فيصل وابتسام"
           disabled={opened}
         >
-          <span className="theme-opening">تم بحمد الله ونعمته عقد قران</span>
-          <img className="theme-monogram" src="/reference-monogram.png" alt="" />
-          <span className="theme-diamond" aria-hidden="true">◆</span>
-          <span className="theme-date">22 · 10 · 2030</span>
-          <span className="theme-couple">فيصل <i>&amp;</i> ابتسام</span>
-          <span className="theme-prayer">اللهم اجعله عقدًا تنعقد به سعادتنا<br />وارزقنا التمام الجميل</span>
-          <span className="theme-invite">حضوركم يتمّم فرحتنا</span>
-          <span className="tap-label">اضغط لعرض تفاصيل الدعوة</span>
+          <span className="fabric-door fabric-door-right"><i /></span>
+          <span className="fabric-door fabric-door-left"><i /></span>
+          <span className="fabric-clasp" aria-hidden="true">
+            <b>ف</b><i>ا</i><small>◆</small>
+          </span>
+          <span className="fabric-title">فيصل وابتسام</span>
+          <span className="fabric-hint">اضغط لفتح الدعوة</span>
         </button>
       </section>
     </main>
