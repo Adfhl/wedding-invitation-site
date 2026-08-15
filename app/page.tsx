@@ -79,6 +79,8 @@ export default function Home() {
               <span className="seal-rim" />
               <span className="seal-letter">ع</span>
             </span>
+            <span className="reference-cover" aria-hidden="true" />
+            <span className="seal-hotspot" aria-hidden="true"><i /></span>
           </button>
         </div>
 
