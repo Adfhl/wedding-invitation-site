@@ -2467,3 +2467,35 @@ body { margin: 0; background: #e9dfcf; }
   .inside-divider { margin-top: auto; }
   .inline-rsvp { margin-bottom: 22px; }
 }
+
+/* V21 — supplied Faisal and Ebtisam monogram */
+.inside-monogram {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 104px;
+  height: 64px;
+  margin: 4px 0 0;
+  overflow: hidden;
+}
+
+.inside-monogram img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 520px) {
+  .inside-monogram { width: 94px; height: 56px; }
+  .inside-monogram img { width: 272px; }
+}
+
+@media (max-height: 650px) {
+  .inside-monogram { width: 82px; height: 42px; margin-top: 0; }
+  .inside-monogram img { width: 235px; }
+}

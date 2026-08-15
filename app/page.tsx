@@ -14,7 +14,9 @@ export default function Home() {
         <article className="inside-card" aria-hidden={!opened}>
           <div className="inside-frame">
             <span className="inside-arch" aria-hidden="true" />
-            <span className="inside-initials" aria-label="فيصل وابتسام"><b>ف</b><i>ا</i></span>
+            <span className="inside-monogram" aria-label="شعار فيصل وابتسام">
+              <img src="/faisal-ebtisam-monogram.png" alt="" />
+            </span>
             <p className="inside-kicker">دعوة عقد قران</p>
             <p className="inside-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
 
