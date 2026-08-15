@@ -551,3 +551,85 @@ fieldset legend { margin-bottom: 10px; }
   .pin::after { left: 6px; top: 5px; }
   .rsvp-trigger { font-size: 11px; }
 }
+
+/* Refined opening motion: quick seal release, lateral doors, direct card reveal */
+.envelope,
+.envelope-back,
+.paper-lining,
+.door,
+.wax-seal,
+.invitation-card {
+  will-change: transform, opacity;
+}
+
+.envelope-back,
+.paper-lining {
+  transition: opacity .38s ease .56s, transform .5s cubic-bezier(.22,.8,.22,1) .5s;
+}
+
+.door {
+  transition:
+    transform .82s cubic-bezier(.22,.78,.22,1),
+    opacity .58s ease .18s,
+    filter .5s ease;
+}
+
+.is-open .door-right {
+  transform: translateX(104%) rotateZ(1.5deg);
+  opacity: .12;
+  filter: brightness(.9);
+}
+
+.is-open .door-left {
+  transform: translateX(-104%) rotateZ(-1.5deg);
+  opacity: .12;
+  filter: brightness(.9);
+}
+
+.wax-seal {
+  transition:
+    transform .36s cubic-bezier(.2,.9,.3,1.3),
+    opacity .28s ease .12s;
+}
+
+.is-open .wax-seal {
+  transform: translate(-50%, -50%) rotate(6deg) scale(.35);
+  opacity: 0;
+}
+
+.invitation-card {
+  transform: translate(-50%, 8%) scale(.9);
+  opacity: .35;
+  transition:
+    transform .92s cubic-bezier(.2,.82,.2,1) .22s,
+    opacity .42s ease .18s,
+    box-shadow .65s ease .3s;
+}
+
+.is-open .invitation-card {
+  transform: translate(-50%, -12%) scale(1);
+  opacity: 1;
+}
+
+.is-open .envelope-back,
+.is-open .paper-lining {
+  opacity: 0;
+  transform: scale(.94);
+}
+
+.is-open .envelope-shadow {
+  transform: scale(.72);
+  opacity: .25;
+  transition: transform .7s ease .32s, opacity .55s ease .36s;
+}
+
+.is-open .open-hint {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+@media (max-width: 640px) {
+  .invitation-stage { min-height: 500px; }
+  .is-open .invitation-card { transform: translate(-50%, -9%) scale(1); }
+}
