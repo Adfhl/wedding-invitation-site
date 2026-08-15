@@ -2612,3 +2612,26 @@ body { margin: 0; background: #e9dfcf; }
   .inside-monogram { margin-top: 88px; }
   .inline-rsvp { margin-bottom: 82px; }
 }
+
+/* V25 — reveal the complete transparent monogram without clipping */
+.inside-monogram {
+  width: 160px;
+  height: 92px;
+}
+
+.inside-monogram img {
+  top: 50%;
+  left: -60px;
+  width: 220px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 520px) {
+  .inside-monogram { width: 144px; height: 82px; }
+  .inside-monogram img { left: -54px; width: 198px; }
+}
+
+@media (max-height: 650px) {
+  .inside-monogram { width: 120px; height: 66px; }
+  .inside-monogram img { left: -45px; width: 165px; }
+}
