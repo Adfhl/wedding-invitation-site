@@ -2499,3 +2499,63 @@ body { margin: 0; background: #e9dfcf; }
   .inside-monogram { width: 82px; height: 42px; margin-top: 0; }
   .inside-monogram img { width: 235px; }
 }
+
+/* V22 — supplied upper and lower invitation ornaments */
+.inside-ornament {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateX(-50%);
+  mix-blend-mode: multiply;
+}
+
+.inside-ornament img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.ornament-top {
+  top: 30px;
+  width: 178px;
+  height: 54px;
+  opacity: .74;
+}
+
+.ornament-top img { width: 220px; }
+
+.ornament-bottom {
+  bottom: 29px;
+  width: 206px;
+  height: 42px;
+  opacity: .68;
+}
+
+.ornament-bottom img { width: 226px; }
+
+.inside-monogram { margin-top: 58px; }
+.inline-rsvp { margin-bottom: 82px; }
+
+@media (max-width: 520px) {
+  .ornament-top { top: 23px; width: 158px; height: 47px; }
+  .ornament-top img { width: 196px; }
+  .ornament-bottom { bottom: 23px; width: 180px; height: 38px; }
+  .ornament-bottom img { width: 200px; }
+  .inside-monogram { margin-top: 48px; }
+  .inline-rsvp { margin-bottom: 68px; }
+}
+
+@media (max-height: 650px) {
+  .ornament-top { top: 18px; width: 134px; height: 34px; }
+  .ornament-top img { width: 164px; }
+  .ornament-bottom { bottom: 17px; width: 154px; height: 31px; }
+  .ornament-bottom img { width: 172px; }
+  .inside-monogram { margin-top: 31px; }
+  .inline-rsvp { margin-bottom: 52px; }
+}

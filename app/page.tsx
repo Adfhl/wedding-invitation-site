@@ -14,6 +14,12 @@ export default function Home() {
         <article className="inside-card" aria-hidden={!opened}>
           <div className="inside-frame">
             <span className="inside-arch" aria-hidden="true" />
+            <span className="inside-ornament ornament-top" aria-hidden="true">
+              <img src="/invitation-ornament-top.png" alt="" />
+            </span>
+            <span className="inside-ornament ornament-bottom" aria-hidden="true">
+              <img src="/invitation-ornament-bottom.png" alt="" />
+            </span>
             <span className="inside-monogram" aria-label="شعار فيصل وابتسام">
               <img src="/faisal-ebtisam-monogram.png" alt="" />
             </span>
