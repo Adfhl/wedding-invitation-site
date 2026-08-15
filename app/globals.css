@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "Amiri";
+  src: url("/amiri-arabic-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiri";
+  src: url("/amiri-arabic-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Huwiya";
   src: url("/itfHuwiyaArabic-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -42,7 +56,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--beige-50);
-  font-family: "Huwiya", Tahoma, sans-serif;
+  font-family: "Amiri", "Traditional Arabic", serif;
 }
 button, input, textarea, select { font: inherit; }
 button { -webkit-tap-highlight-color: transparent; }
@@ -392,4 +406,148 @@ fieldset legend { margin-bottom: 10px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* Formal invitation direction — square card, restrained ornament, classical type */
+:root {
+  --olive-950: #20271f;
+  --olive-900: #303a2e;
+  --olive-800: #414d3c;
+  --olive-700: #596451;
+  --sage: #7d8975;
+  --beige-50: #f5f0e6;
+  --beige-100: #eee5d5;
+  --beige-200: #e2d4bd;
+  --beige-300: #d0b991;
+  --gold: #9a7643;
+  --gold-light: #c2a36b;
+  --ink: #252b23;
+}
+
+.hero {
+  grid-template-rows: auto minmax(620px, 1fr) auto;
+  background:
+    linear-gradient(rgba(245,240,230,.93), rgba(245,240,230,.93)),
+    repeating-linear-gradient(90deg, rgba(154,118,67,.08) 0 1px, transparent 1px 72px),
+    #f5f0e6;
+}
+.hero::before {
+  inset: 28px;
+  border-radius: 0;
+  border-color: rgba(154,118,67,.38);
+  box-shadow: inset 0 0 0 7px var(--beige-50), inset 0 0 0 8px rgba(154,118,67,.16);
+}
+.botanical { display: none; }
+.intro { padding-top: clamp(54px, 8vh, 90px); }
+.eyebrow { font-size: 16px; letter-spacing: 0; font-weight: 400; }
+.eyebrow::before, .eyebrow::after { width: 52px; background: var(--gold); }
+.intro h1 { font-size: clamp(48px, 7vw, 78px); font-weight: 400; }
+.intro h1 i { font-size: .58em; }
+.intro p { font-size: 17px; }
+
+.invitation-stage { width: min(94vw, 790px); min-height: 660px; }
+.envelope-shadow { width: 67%; left: 16.5%; bottom: 58px; }
+.envelope {
+  width: min(560px, 82vw);
+  height: min(560px, 82vw);
+  min-height: 0;
+  bottom: 62px;
+}
+.envelope-back { border-radius: 3px; background: linear-gradient(145deg, #3f4b3c, #283226 72%); }
+.paper-lining { inset: 15px; border-radius: 0; background: #eee5d5; }
+.door { border-radius: 0 !important; }
+.door::before {
+  background:
+    linear-gradient(90deg, transparent 0 9%, rgba(194,163,107,.18) 9% 9.35%, transparent 9.35% 100%),
+    linear-gradient(155deg, #4d5948 0%, #394535 56%, #2b3529 100%);
+  box-shadow: inset 0 0 0 1px rgba(208,185,145,.32), inset 0 0 0 10px #354032, inset 0 0 0 11px rgba(208,185,145,.2);
+}
+.door i { opacity: .35; }
+.wax-seal {
+  width: 94px;
+  height: 94px;
+  border-radius: 47% 53% 48% 52%;
+  background: radial-gradient(circle at 42% 35%, #626b4b 0 31%, #4b5538 58%, #37412c 82%);
+}
+.seal-rim { border-color: rgba(226,212,189,.48); }
+.seal-letter { font-family: "Amiri", serif; font-size: 46px; color: #dbc89e; }
+
+.invitation-card {
+  bottom: 94px;
+  width: min(500px, 74vw);
+  aspect-ratio: 1 / 1;
+  padding: 14px;
+  background:
+    linear-gradient(90deg, rgba(154,118,67,.025), transparent 22%, transparent 78%, rgba(154,118,67,.025)),
+    #f8f3e9;
+  transform: translate(-50%, 15%) scale(.84);
+}
+.is-open .invitation-card { transform: translate(-50%, -12%) scale(1); }
+.card-border {
+  position: relative;
+  padding: clamp(20px, 4vw, 34px);
+  border: 1px solid rgba(154,118,67,.72);
+  outline: 1px solid rgba(154,118,67,.28);
+  outline-offset: -8px;
+}
+.card-border::before,
+.card-border::after {
+  content: "◆";
+  position: absolute;
+  color: var(--gold);
+  font-size: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f8f3e9;
+  padding: 0 12px;
+}
+.card-border::before { top: -5px; }
+.card-border::after { bottom: -5px; }
+.formal-heading { display: flex; align-items: center; gap: 12px; color: var(--gold); }
+.formal-heading::before, .formal-heading::after { content: ""; width: 35px; height: 1px; background: currentColor; }
+.formal-heading span { font-size: 14px; }
+.formal-heading i { display: none; }
+.blessing { font-size: clamp(16px, 2.5vw, 21px); line-height: 1.5; }
+.couple-names { display: flex; align-items: center; justify-content: center; color: var(--olive-900); font-size: clamp(39px, 7vw, 58px); line-height: 1; }
+.couple-names span { min-width: 100px; }
+.couple-names b { color: var(--gold); font-family: Georgia, serif; font-size: .48em; font-weight: 400; margin: 0 10px; }
+.invite-copy { font-size: clamp(13px, 2.2vw, 17px); }
+.date-row { border-block: 1px solid rgba(154,118,67,.22); padding-block: 12px; }
+.date-row strong { font-size: 13px; }
+.date-row span { font-size: 11px; }
+.date-mark b { font-family: Georgia, serif; font-size: 22px; }
+.venue strong { font-size: 13px; }
+.venue small { font-size: 10px; }
+.rsvp-trigger { font-size: 14px; }
+
+.rsvp-section { background: #273025; }
+.section-heading h2, .success-card h3 { font-weight: 400; }
+.section-heading h2 { font-size: clamp(42px, 7vw, 60px); }
+.rsvp-form, .success-card { border-radius: 4px; border-color: rgba(194,163,107,.35); }
+.field input, .field textarea, .field select, .attendance-options label, .submit-rsvp { border-radius: 2px; }
+.submit-rsvp { font-size: 17px; }
+
+@media (max-width: 640px) {
+  .hero { grid-template-rows: auto minmax(500px, 1fr) auto; }
+  .hero::before { inset: 12px; border-radius: 0; }
+  .intro { padding-top: 48px; }
+  .invitation-stage { min-height: 540px; }
+  .envelope { width: min(84vw, 360px); height: min(84vw, 360px); bottom: 76px; }
+  .invitation-card { width: min(80vw, 350px); bottom: 94px; padding: 8px; }
+  .is-open .invitation-card { transform: translate(-50%, -10%) scale(1); }
+  .card-border { padding: 16px 15px; }
+  .formal-heading span { font-size: 11px; }
+  .blessing { font-size: 14px; }
+  .couple-names { font-size: 36px; }
+  .couple-names span { min-width: 70px; }
+  .invite-copy { font-size: 12px; }
+  .date-row { padding-block: 8px; }
+  .date-row strong { font-size: 11px; }
+  .date-row span { font-size: 8px; }
+  .date-mark b { font-size: 17px; }
+  .venue strong { font-size: 11px; }
+  .venue small { font-size: 8px; }
+  .pin { width: 19px; height: 19px; }
+  .pin::after { left: 6px; top: 5px; }
+  .rsvp-trigger { font-size: 11px; }
 }

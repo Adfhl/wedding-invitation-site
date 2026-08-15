@@ -41,20 +41,23 @@ export default function Home() {
 
           <article className="invitation-card" aria-hidden={!opened}>
             <div className="card-border">
-              <span className="tiny-flower">✦</span>
-              <p className="blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
-              <div className="monogram" aria-label="عمر وعبير">
-                <span>ع</span><b>و</b><span>ع</span>
+              <div className="formal-heading">
+                <span>دعوة زفاف</span>
+                <i aria-hidden="true">◆</i>
               </div>
-              <p className="invite-copy">يسعدنا حضوركم ومشاركتكم<br />ليلةً من الفرح والسرور</p>
+              <p className="blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
+              <div className="couple-names" aria-label="عمر وعبير">
+                <span>عُمر</span><b>&amp;</b><span>عبير</span>
+              </div>
+              <p className="invite-copy">يسرّنا دعوتكم لمشاركتنا فرحة الزفاف</p>
               <div className="date-row">
-                <div><strong>الأحد</strong><span>12 ربيع الآخر 1449</span></div>
+                <div><strong>الأحد</strong><span>12 ربيع الآخر 1449هـ</span></div>
                 <div className="date-mark"><span>22</span><b>10</b><span>2030</span></div>
-                <div><strong>الاستقبال</strong><span>9:30 مساءً</span></div>
+                <div><strong>الاستقبال</strong><span>الساعة 9:30 مساءً</span></div>
               </div>
               <div className="venue">
                 <span className="pin" aria-hidden="true" />
-                <div><strong>قاعة الأفراح</strong><small>أبها، المملكة العربية السعودية</small></div>
+                <div><strong>قاعة الأفراح — أبها</strong><small>نسعد بحضوركم وتشريفكم</small></div>
               </div>
               <button className="rsvp-trigger" onClick={goToRsvp}>تأكيد الحضور</button>
             </div>
