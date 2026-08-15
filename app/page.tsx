@@ -79,7 +79,17 @@ export default function Home() {
               <span className="seal-rim" />
               <span className="seal-letter">ع</span>
             </span>
-            <span className="reference-cover" aria-hidden="true" />
+            <span className="reference-cover" aria-hidden="true">
+              <span className="cover-arch" />
+              <span className="cover-botanical" />
+              <span className="cover-ornament">❦</span>
+              <span className="cover-kicker">دعوة ملكة</span>
+              <span className="cover-names"><b>فيصل</b><i>و</i><b>ابتسام</b></span>
+              <span className="cover-divider"><i>✦</i></span>
+              <span className="cover-copy">يسرّنا دعوتكم لمشاركتنا<br />فرحة عقد قران</span>
+              <span className="cover-ribbon" />
+              <span className="cover-seal"><b>ف</b><i>ا</i><small>❧</small></span>
+            </span>
             <span className="seal-hotspot" aria-hidden="true"><i /></span>
           </button>
         </div>
