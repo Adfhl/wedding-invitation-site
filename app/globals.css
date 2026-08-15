@@ -2192,3 +2192,27 @@ body { margin: 0; background: #e9dfcf; }
   .fabric-clasp i { font-size: 27px; }
   .fabric-title { top: 18%; font-size: 20px; }
 }
+
+/* V15 — plain, quiet outer cover */
+.fabric-door {
+  background: linear-gradient(105deg, #d8cdbf 0%, #d1c3b4 100%);
+  box-shadow: inset 0 0 0 1px rgba(91,75,63,.08);
+}
+.fabric-door::before,
+.fabric-door::after,
+.fabric-door > i { display: none; }
+.fabric-door-right { border-left: 1px solid rgba(103,86,72,.13); }
+.fabric-door-left { border-right: 1px solid rgba(255,255,255,.2); }
+.fabric-clasp {
+  width: 78px;
+  height: 78px;
+  border: 1px solid rgba(104,86,72,.24);
+  color: #74665d;
+  background: #ded4c9;
+  box-shadow: 0 8px 20px rgba(72,57,47,.12), inset 0 0 0 5px #d1c3b5, inset 0 0 0 6px rgba(95,76,63,.12);
+}
+.fabric-clasp b,
+.fabric-clasp i { font-size: 27px; }
+.fabric-clasp small { display: none; }
+.fabric-title { display: none; }
+.fabric-hint { bottom: 7%; color: rgba(92,79,69,.66); }
