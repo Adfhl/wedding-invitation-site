@@ -61,7 +61,7 @@ export default function Home() {
           <span className="fabric-door fabric-door-right"><i /></span>
           <span className="fabric-door fabric-door-left"><i /></span>
           <span className="fabric-clasp" aria-hidden="true">
-            <b>ف</b><i>ا</i><small>◆</small>
+            <img src="/faisal-ibtisam-seal.png" alt="" />
           </span>
           <span className="fabric-title">فيصل وابتسام</span>
           <span className="fabric-hint">اضغط لفتح الدعوة</span>
