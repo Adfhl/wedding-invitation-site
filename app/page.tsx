@@ -13,6 +13,9 @@ export default function Home() {
       <section className={`invitation-experience ${opened ? "is-open" : ""}`} aria-label="دعوة حفل ملكة فيصل وابتسام">
         <article className="inside-card" aria-hidden={!opened}>
           <div className="inside-frame">
+            <span className="inside-arch" aria-hidden="true" />
+            <span className="inside-botanical botanical-right" aria-hidden="true" />
+            <span className="inside-botanical botanical-left" aria-hidden="true" />
             <img className="inside-symbol" src="/reference-monogram.png" alt="" />
             <p className="inside-kicker">دعوة حفل ملكة</p>
             <p className="inside-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
@@ -25,6 +28,8 @@ export default function Home() {
               <div><strong>9:30 مساءً</strong><span>موعد الاستقبال</span></div>
               <div><strong>قاعة الأفراح</strong><span>أبها</span></div>
             </div>
+
+            <div className="inside-divider" aria-hidden="true"><span>◆</span></div>
 
             <div className="inline-rsvp" aria-live="polite">
               {!attendance ? (
