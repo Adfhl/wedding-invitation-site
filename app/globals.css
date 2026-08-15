@@ -2448,3 +2448,22 @@ body { margin: 0; background: #e9dfcf; }
   .inside-initials b,
   .inside-initials i { font-size: 27px; }
 }
+
+/* V20 — anchor the RSVP area near the bottom of the invitation */
+.inside-divider {
+  margin-top: auto;
+}
+
+.inline-rsvp {
+  margin-top: 7px;
+  margin-bottom: 46px;
+}
+
+@media (max-width: 520px) {
+  .inline-rsvp { margin-bottom: 34px; }
+}
+
+@media (max-height: 650px) {
+  .inside-divider { margin-top: auto; }
+  .inline-rsvp { margin-bottom: 22px; }
+}
