@@ -2380,3 +2380,70 @@ body { margin: 0; background: #e9dfcf; }
   .inside-divider { margin-top: 7px; height: 15px; }
   .inline-rsvp { margin-top: 4px; padding-top: 10px; }
 }
+
+/* V19 — corrected initials, wording, and full-height arch */
+.inside-arch {
+  top: 18px;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  height: auto;
+  border-bottom: 1px solid rgba(166,134,91,.24);
+}
+.inside-botanical { display: none; }
+.inside-initials {
+  position: relative;
+  z-index: 2;
+  width: 84px;
+  height: 54px;
+  margin: 10px 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #a78370;
+}
+.inside-initials::before,
+.inside-initials::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 1px;
+  background: rgba(166,134,91,.3);
+}
+.inside-initials::before { right: -8px; }
+.inside-initials::after { left: -8px; }
+.inside-initials b,
+.inside-initials i {
+  font-family: "Huwiya", sans-serif;
+  font-size: 35px;
+  line-height: 1;
+  font-weight: 400;
+  font-style: normal;
+}
+.inside-initials i { transform: translateY(3px); }
+.inside-kicker { margin-bottom: 9px; color: #92745f; }
+.inside-blessing { max-width: 310px; }
+.inside-names { margin-top: 12px; font-size: 42px; }
+.inside-copy { margin-bottom: 15px; }
+.inside-details { width: calc(100% - 42px); }
+.inside-divider { margin-top: 14px; }
+.inline-rsvp { width: calc(100% - 38px); margin-top: 7px; }
+
+@media (max-width: 520px) {
+  .inside-arch { top: 12px; right: 12px; bottom: 12px; left: 12px; }
+  .inside-initials { margin-top: 4px; height: 46px; }
+  .inside-initials b,
+  .inside-initials i { font-size: 31px; }
+  .inside-names { font-size: 38px; }
+  .inside-details { width: calc(100% - 22px); }
+  .inline-rsvp { width: calc(100% - 22px); }
+}
+
+@media (max-height: 650px) {
+  .inside-arch { height: auto; }
+  .inside-initials { height: 35px; margin-top: 0; }
+  .inside-initials b,
+  .inside-initials i { font-size: 27px; }
+}

@@ -14,14 +14,12 @@ export default function Home() {
         <article className="inside-card" aria-hidden={!opened}>
           <div className="inside-frame">
             <span className="inside-arch" aria-hidden="true" />
-            <span className="inside-botanical botanical-right" aria-hidden="true" />
-            <span className="inside-botanical botanical-left" aria-hidden="true" />
-            <img className="inside-symbol" src="/reference-monogram.png" alt="" />
-            <p className="inside-kicker">دعوة حفل ملكة</p>
+            <span className="inside-initials" aria-label="فيصل وابتسام"><b>ف</b><i>ا</i></span>
+            <p className="inside-kicker">دعوة عقد قران</p>
             <p className="inside-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
 
             <h1 className="inside-names"><span>فيصل</span><i>و</i><span>ابتسام</span></h1>
-            <p className="inside-copy">يسرّنا دعوتكم لمشاركتنا فرحة حفل الملكة</p>
+            <p className="inside-copy">يسرّنا دعوتكم لمشاركتنا فرحة عقد قراننا</p>
 
             <div className="inside-details">
               <div><strong>الأحد</strong><span>12 ربيع الآخر 1449هـ</span></div>
