@@ -127,6 +127,7 @@ export default function Home() {
         </section>
 
         <section className="program-section section-shell">
+          <img className="program-floral-feature" src="/floral-crescent-left.png" alt="" />
           <img className="program-ornament" src="/floral-babys-breath.png" alt="" />
           <div className="section-heading-new"><span>ترتيب أمسيتنا</span><h2>برنامج الحفل</h2><p>تفاصيل ليلةٍ ننتظرها بكل فرح.</p></div>
           <div className="program-timeline">
