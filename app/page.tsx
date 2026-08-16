@@ -103,14 +103,13 @@ export default function Home() {
             <p className="hero-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
             <p className="hero-message">يسعدنا ويشرّفنا دعوتكم بكل الحب لحضور حفل عقد قران</p>
             <h1><span>فيصل</span><i>و</i><span>ابتسام</span></h1>
-            <p className="hero-kicker">وذلك بمشيئة الله تعالى</p>
             <p className="hero-wish">الأيام الجميلة لا تكتمل إلا بكم<br />والأوقات السعيدة تبدأ معكم</p>
             <div className="hero-rule"><span>◆</span></div>
           </div>
         </section>
 
         <section id="countdown" className="countdown-section section-shell">
-          <div className="section-heading-new"><span>موعدنا مع الفرح</span><h2>باقي على لقائنا</h2><p>نعدّ الأيام حتى تكتمل فرحتنا بحضوركم.</p></div>
+          <div className="section-heading-new"><span>نلتقي على فرح</span><h2>باقي على لقائنا</h2><p>نعدّ الأيام حتى تكتمل فرحتنا بحضوركم.</p></div>
           <div className="countdown-grid" aria-label="العد التنازلي">
             {[
               [countdown.days, "يوم"], [countdown.hours, "ساعة"], [countdown.minutes, "دقيقة"], [countdown.seconds, "ثانية"],
