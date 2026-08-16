@@ -18,3 +18,28 @@
 .attendance-section { min-height:86svh;background:#f8f3ea }.attendance-ornament{width:220px;height:78px;object-fit:contain;margin-bottom:20px}.attendance-actions-new{width:min(100%,680px);display:grid;grid-template-columns:1fr 1fr;gap:14px}.attendance-actions-new button{min-height:130px;border:1px solid #d9cbbd;color:#776c65;background:rgba(255,255,255,.48);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center}.attendance-actions-new button.confirm{color:white;background:var(--bronze);border-color:var(--bronze)}.attendance-actions-new strong{font-size:20px}.attendance-actions-new span{margin-top:7px;opacity:.75}.attendance-section footer{margin-top:70px;color:var(--bronze);font-size:21px}.attendance-section footer i{font-style:normal;padding:0 10px}.submitted-message{text-align:center;padding:38px;width:min(100%,590px);border:1px solid #d9cbbd}.submitted-message>span{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;margin:auto;color:white;background:var(--bronze)}.submitted-message h3{font-size:28px;margin:14px 0 4px}.submitted-message p{margin:0}.submitted-message button{margin-top:18px;border:0;border-bottom:1px solid var(--bronze);color:var(--bronze);background:none;cursor:pointer}
 @media(max-width:700px){.section-shell{padding:58px 18px}.invitation-card-new{min-height:82svh;padding:42px 20px}.hero-ornament{width:190px}.hero-blessing{font-size:20px}.invitation-card-new h1{gap:10px;font-size:49px}.countdown-grid{grid-template-columns:1fr 1fr}.countdown-grid>div{min-height:130px;border-bottom:1px solid rgba(220,195,169,.18)}.event-details-grid{grid-template-columns:1fr}.event-details-grid article{min-height:180px;border-inline:0;border-bottom:1px solid rgba(157,121,99,.18)}.program-timeline::before{right:76px}.program-timeline article{grid-template-columns:60px 30px 1fr;gap:16px}.program-timeline article::before{right:69px;width:13px;height:13px}.program-timeline time{font-size:20px}.program-timeline h3{font-size:20px}.attendance-actions-new{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.opening-screen.is-opening{display:none}.invitation-journey{opacity:1;transform:none}}
+
+/* Botanical artwork supplied for this invitation */
+.invitation-card-new{position:relative;z-index:2;background:rgba(255,252,247,.8)}
+.floral-edge{position:absolute;z-index:1;width:min(43vw,520px);height:auto;pointer-events:none;opacity:.56}
+.floral-edge-right{top:-3%;right:-10%}
+.floral-edge-left{bottom:-7%;left:-12%}
+.hero-ornament{width:110px;height:110px;opacity:.9}
+.countdown-ornament{width:115px;height:115px;margin-top:42px;filter:none;opacity:.64}
+.event-section>*:not(.event-floral){position:relative;z-index:2}
+.event-floral{position:absolute;z-index:1;height:auto;pointer-events:none;opacity:.48}
+.event-floral-bouquet{width:min(34vw,410px);right:-8%;bottom:-5%}
+.event-floral-leaves{width:min(25vw,300px);left:-5%;top:4%;transform:rotate(-18deg)}
+.event-details-grid{background:rgba(255,255,255,.56)}
+.program-ornament{width:105px;height:105px;margin-bottom:8px;filter:none;opacity:.5}
+.program-ornament-bottom{width:86px;height:86px;margin:30px 0 0}
+.attendance-ornament{width:150px;height:150px;margin-bottom:12px}
+
+@media(max-width:700px){
+  .floral-edge{width:68vw;opacity:.42}
+  .floral-edge-right{right:-28%;top:-1%}
+  .floral-edge-left{left:-30%;bottom:-2%}
+  .hero-ornament{width:90px;height:90px}
+  .event-floral-bouquet{width:62vw;right:-25%;bottom:-2%;opacity:.35}
+  .event-floral-leaves{width:45vw;left:-18%;opacity:.32}
+}

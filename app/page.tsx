@@ -89,9 +89,10 @@ export default function Home() {
 
       <div className="invitation-journey" aria-hidden={!opened}>
         <section className="invitation-hero section-shell">
-          <div className="ornament ornament-a"><img src="/invitation-ornament-top.png" alt="" /></div>
+          <img className="floral-edge floral-edge-right" src="/floral-crescent-right.png" alt="" />
+          <img className="floral-edge floral-edge-left" src="/floral-crescent-left.png" alt="" />
           <div className="invitation-card-new">
-            <img className="hero-ornament" src="/invitation-ornament-top.png" alt="" />
+            <img className="hero-ornament" src="/floral-babys-breath.png" alt="" />
             <img className="hero-monogram" src="/faisal-ebtisam-monogram.png" alt="شعار فيصل وابتسام" />
             <p className="hero-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
             <p className="hero-wish">الأيام الجميلة لا تكتمل إلا بكم<br />والأوقات السعيدة تبدأ معكم</p>
@@ -110,10 +111,12 @@ export default function Home() {
               [countdown.days, "يوم"], [countdown.hours, "ساعة"], [countdown.minutes, "دقيقة"], [countdown.seconds, "ثانية"],
             ].map(([value, label]) => <div key={label}><strong>{String(value).padStart(2, "0")}</strong><span>{label}</span></div>)}
           </div>
-          <img className="countdown-ornament" src="/invitation-ornament-bottom.png" alt="" />
+          <img className="countdown-ornament" src="/floral-single.png" alt="" />
         </section>
 
         <section className="event-section section-shell">
+          <img className="event-floral event-floral-bouquet" src="/floral-bouquet.png" alt="" />
+          <img className="event-floral event-floral-leaves" src="/floral-leaves.png" alt="" />
           <div className="section-heading-new"><span>تفاصيل المناسبة</span><h2>حياكم الله</h2><p>وجودكم بيننا هو أجمل تفاصيل هذه الليلة.</p></div>
           <div className="event-details-grid">
             <article><b>01</b><span>اليوم والتاريخ</span><strong>الأحد</strong><p>12 ربيع الآخر 1449هـ</p></article>
@@ -124,7 +127,7 @@ export default function Home() {
         </section>
 
         <section className="program-section section-shell">
-          <img className="program-ornament" src="/invitation-ornament-top.png" alt="" />
+          <img className="program-ornament" src="/floral-babys-breath.png" alt="" />
           <div className="section-heading-new"><span>ترتيب أمسيتنا</span><h2>برنامج الحفل</h2><p>تفاصيل ليلةٍ ننتظرها بكل فرح.</p></div>
           <div className="program-timeline">
             <article><time>9:30</time><span>مساءً</span><div><b>01</b><h3>استقبال الضيوف</h3><p>نستقبلكم بكل محبة وترحيب.</p></div></article>
@@ -132,11 +135,11 @@ export default function Home() {
             <article><time>10:30</time><span>مساءً</span><div><b>03</b><h3>الضيافة والتهاني</h3><p>وقت نشاركه معكم بالفرح والتهنئة.</p></div></article>
             <article><time>11:15</time><span>مساءً</span><div><b>04</b><h3>مأدبة العشاء</h3><p>نتشرّف بمشاركتكم ختام أمسيتنا.</p></div></article>
           </div>
-          <img className="program-ornament program-ornament-bottom" src="/invitation-ornament-bottom.png" alt="" />
+          <img className="program-ornament program-ornament-bottom" src="/floral-single.png" alt="" />
         </section>
 
         <section className="attendance-section section-shell">
-          <img className="attendance-ornament" src="/invitation-ornament-top.png" alt="" />
+          <img className="attendance-ornament" src="/floral-bouquet.png" alt="" />
           <div className="section-heading-new"><span>تأكيد الحضور</span><h2>هل ستشاركوننا الفرحة؟</h2><p>نرجو تسجيل ردكم لمساعدتنا في ترتيب الاستقبال.</p></div>
           {!submitted ? <div className="attendance-actions-new"><button className="confirm" onClick={() => chooseAttendance("yes")}><strong>أؤكد الحضور</strong><span>بكل سرور</span></button><button onClick={() => chooseAttendance("no")}><strong>أعتذر عن الحضور</strong><span>مع خالص الدعوات</span></button></div> : <div className="submitted-message"><span>{submitted === "yes" ? "♥" : "—"}</span><h3>{submitted === "yes" ? "تم تأكيد حضوركم" : "وصلنا اعتذاركم"}</h3><p>{submitted === "yes" ? "بحضوركم تكتمل فرحتنا، ننتظركم بكل محبة." : "نقدّر اعتذاركم، ونسأل الله أن يجمعنا بكم على خير."}</p><button onClick={() => { setSubmitted(null); setShowForm(true); }}>تعديل الرد</button></div>}
           <footer>فيصل <i>و</i> ابتسام</footer>
