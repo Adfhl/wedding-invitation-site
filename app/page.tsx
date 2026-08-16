@@ -98,7 +98,7 @@ export default function Home() {
             <p className="hero-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
             <p className="hero-wish">الأيام الجميلة لا تكتمل إلا بكم<br />والأوقات السعيدة تبدأ معكم</p>
             <p className="hero-message">يسعدنا ويشرّفنا دعوتكم بكل الحب لحضور حفل عقد قران</p>
-            <h1><span>فيصل وابتسام</span></h1>
+            <h1><span>فيصل</span><i>و</i><span>ابتسام</span></h1>
             <p className="hero-kicker">وذلك بمشيئة الله تعالى</p>
             <div className="hero-rule"><span>◆</span></div>
             <a href="#countdown">اكتشف تفاصيل المناسبة <b>↓</b></a>
