@@ -37,17 +37,21 @@ export default function Home() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fadeTimer = window.setTimeout(() => setOpening(true), 3460);
-    const revealTimer = window.setTimeout(() => {
-      setOpened(true);
-      document.body.classList.add("invitation-opened");
-    }, 4400);
+    const fallbackTimer = window.setTimeout(() => finishOpening(), 8000);
     return () => {
-      window.clearTimeout(fadeTimer);
-      window.clearTimeout(revealTimer);
+      window.clearTimeout(fallbackTimer);
       document.body.classList.remove("invitation-opened");
     };
   }, []);
+
+  function finishOpening() {
+    if (opening || opened) return;
+    setOpening(true);
+    window.setTimeout(() => {
+      setOpened(true);
+      document.body.classList.add("invitation-opened");
+    }, 850);
+  }
 
   function chooseAttendance(value: Attendance) {
     setAttendance(value);
@@ -82,7 +86,7 @@ export default function Home() {
         <section className={`opening-screen ${opening ? "is-opening" : ""}`} aria-label="افتتاح دعوة فيصل وابتسام">
           <div className="opening-glow" />
           <div className="envelope-gif-button" aria-hidden="true">
-            <img src="/envelope-opening.gif" alt="ظرف دعوة فاخر مختوم بالشمع" />
+            <video src="/envelope-opening.mp4" autoPlay muted playsInline preload="auto" onEnded={finishOpening} />
           </div>
         </section>
       )}
@@ -94,14 +98,14 @@ export default function Home() {
           <img className="hero-flower hero-flower-top" src="/floral-bouquet.png" alt="" />
           <img className="hero-flower hero-flower-bottom" src="/floral-babys-breath.png" alt="" />
           <div className="invitation-card-new">
-            <img className="hero-monogram" src="/faisal-ebtisam-monogram.png" alt="شعار فيصل وابتسام" />
+            <img className="hero-invitation-flower" src="/floral-single.png" alt="" />
+            <p className="hero-invitation-label">دعوة عقد قران</p>
             <p className="hero-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
-            <p className="hero-wish">الأيام الجميلة لا تكتمل إلا بكم<br />والأوقات السعيدة تبدأ معكم</p>
             <p className="hero-message">يسعدنا ويشرّفنا دعوتكم بكل الحب لحضور حفل عقد قران</p>
             <h1><span>فيصل</span><i>و</i><span>ابتسام</span></h1>
             <p className="hero-kicker">وذلك بمشيئة الله تعالى</p>
+            <p className="hero-wish">الأيام الجميلة لا تكتمل إلا بكم<br />والأوقات السعيدة تبدأ معكم</p>
             <div className="hero-rule"><span>◆</span></div>
-            <a href="#countdown">اكتشف تفاصيل المناسبة <b>↓</b></a>
           </div>
         </section>
 
