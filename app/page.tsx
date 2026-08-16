@@ -36,14 +36,18 @@ export default function Home() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  function openInvitation() {
-    if (opening) return;
-    setOpening(true);
-    window.setTimeout(() => {
+  useEffect(() => {
+    const fadeTimer = window.setTimeout(() => setOpening(true), 2160);
+    const revealTimer = window.setTimeout(() => {
       setOpened(true);
       document.body.classList.add("invitation-opened");
-    }, 2100);
-  }
+    }, 2860);
+    return () => {
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(revealTimer);
+      document.body.classList.remove("invitation-opened");
+    };
+  }, []);
 
   function chooseAttendance(value: Attendance) {
     setAttendance(value);
@@ -75,12 +79,11 @@ export default function Home() {
   return (
     <main className={`wedding-site ${opened ? "is-revealed" : ""}`} dir="rtl">
       {!opened && (
-        <section className={`opening-screen ${opening ? "is-opening" : ""}`} aria-label="فتح الدعوة">
+        <section className={`opening-screen ${opening ? "is-opening" : ""}`} aria-label="افتتاح دعوة فيصل وابتسام">
           <div className="opening-glow" />
-          <button type="button" className="envelope-gif-button" onClick={openInvitation} aria-label="اضغط لفتح دعوة فيصل وابتسام">
+          <div className="envelope-gif-button" aria-hidden="true">
             <img src="/envelope-opening.gif" alt="ظرف دعوة فاخر مختوم بالشمع" />
-            <span className="opening-copy"><small>دعوة عقد قران</small><strong>فيصل وابتسام</strong><i>{opening ? "تُفتح دعوتكم…" : "اضغط لفتح الدعوة"}</i></span>
-          </button>
+          </div>
         </section>
       )}
 
