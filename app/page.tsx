@@ -37,11 +37,11 @@ export default function Home() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fadeTimer = window.setTimeout(() => setOpening(true), 4180);
+    const fadeTimer = window.setTimeout(() => setOpening(true), 3460);
     const revealTimer = window.setTimeout(() => {
       setOpened(true);
       document.body.classList.add("invitation-opened");
-    }, 4880);
+    }, 4400);
     return () => {
       window.clearTimeout(fadeTimer);
       window.clearTimeout(revealTimer);
