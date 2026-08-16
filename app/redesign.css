@@ -75,3 +75,23 @@
   .program-timeline article{grid-template-columns:70px 48px 1fr;column-gap:18px}
   .program-timeline>article>span{padding-inline:8px}
 }
+
+/* Keep the full journey light and consistent with the floral invitation */
+.countdown-section{color:#555a46;background:radial-gradient(circle at 50% 22%,#fff 0 18%,transparent 52%),linear-gradient(155deg,#f8f7ef,#e8eadb)}
+.countdown-section .section-heading-new h2{color:#555a46}
+.countdown-section .section-heading-new p{color:#7c806d}
+.countdown-grid{border-color:rgba(125,131,98,.28)}
+.countdown-grid>div{border-color:rgba(125,131,98,.2)}
+.countdown-grid strong{color:#777d5d}
+.countdown-grid span{color:#727664}
+
+.program-section{color:#555a46;background:radial-gradient(circle at 76% 20%,rgba(255,255,255,.8),transparent 42%),linear-gradient(145deg,#f7f5ec,#e5e8d8)}
+.program-section .section-heading-new h2{color:#555a46}
+.program-section .section-heading-new p{color:#7c806d}
+.program-timeline::before{background:linear-gradient(transparent,rgba(125,131,98,.55) 10% 90%,transparent)}
+.program-timeline article::before{border-color:#8d9270;background:#ececdf}
+.program-timeline article div{border-color:rgba(125,131,98,.18)}
+.program-timeline article div b{color:#777d5d}
+.program-timeline h3{color:#555a46}
+.program-timeline p,.program-timeline>article>span{color:#7c806d}
+.program-timeline time{color:#6f7557}
