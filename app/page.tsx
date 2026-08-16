@@ -1,13 +1,34 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 
-type Attendance = "yes" | "no" | "";
+type Attendance = "yes" | "no";
+const EVENT_DATE = new Date("2027-08-15T21:30:00+03:00");
+
+function useCountdown() {
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+  return useMemo(() => {
+    const difference = Math.max(0, EVENT_DATE.getTime() - now);
+    return {
+      days: Math.floor(difference / 86400000),
+      hours: Math.floor((difference / 3600000) % 24),
+      minutes: Math.floor((difference / 60000) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  }, [now]);
+}
 
 export default function Home() {
+  const countdown = useCountdown();
   const [opened, setOpened] = useState(false);
-  const [attendance, setAttendance] = useState<Attendance>("");
+  const [opening, setOpening] = useState(false);
+  const [attendance, setAttendance] = useState<Attendance>("yes");
   const [showForm, setShowForm] = useState(false);
+  const [submitted, setSubmitted] = useState<Attendance | null>(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [companions, setCompanions] = useState(0);
@@ -15,7 +36,16 @@ export default function Home() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  function chooseAttendance(value: Exclude<Attendance, "">) {
+  function openInvitation() {
+    if (opening) return;
+    setOpening(true);
+    window.setTimeout(() => {
+      setOpened(true);
+      document.body.classList.add("invitation-opened");
+    }, 2100);
+  }
+
+  function chooseAttendance(value: Attendance) {
     setAttendance(value);
     setShowForm(true);
     setError("");
@@ -23,7 +53,7 @@ export default function Home() {
 
   async function submitAttendance(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!name.trim() || !attendance) return;
+    if (!name.trim()) return;
     setSaving(true);
     setError("");
     try {
@@ -32,7 +62,8 @@ export default function Home() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ name, phone, attendance, companions, note }),
       });
-      if (!response.ok) throw new Error("تعذر حفظ الرد");
+      if (!response.ok) throw new Error();
+      setSubmitted(attendance);
       setShowForm(false);
     } catch {
       setError("تعذر حفظ الرد الآن، فضلاً جرّب مرة أخرى.");
@@ -42,95 +73,61 @@ export default function Home() {
   }
 
   return (
-    <main className="invitation-page" dir="rtl">
-      <section className={`invitation-experience ${opened ? "is-open" : ""}`} aria-label="دعوة حفل ملكة فيصل وابتسام">
-        <article className="inside-card" aria-hidden={!opened}>
-          <div className="inside-frame">
-            <span className="inside-arch" aria-hidden="true" />
-            <span className="inside-ornament ornament-top" aria-hidden="true">
-              <img src="/invitation-ornament-top.png" alt="" />
-            </span>
-            <span className="inside-ornament ornament-bottom" aria-hidden="true">
-              <img src="/invitation-ornament-bottom.png" alt="" />
-            </span>
-            <span className="inside-monogram" aria-label="شعار فيصل وابتسام">
-              <img src="/faisal-ebtisam-monogram.png" alt="" />
-            </span>
-            <p className="inside-kicker">دعوة عقد قران</p>
-            <p className="inside-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
-
-            <h1 className="inside-names"><span>فيصل</span><i>و</i><span>ابتسام</span></h1>
-            <p className="inside-copy">يسرّنا دعوتكم لمشاركتنا فرحة عقد قراننا</p>
-
-            <div className="inside-details">
-              <div><strong>الأحد</strong><span>12 ربيع الآخر 1449هـ</span></div>
-              <div><strong>9:30 مساءً</strong><span>موعد الاستقبال</span></div>
-              <div><strong>قاعة الأفراح</strong><span>أبها</span></div>
-            </div>
-
-            <div className="inside-divider" aria-hidden="true"><span>◆</span></div>
-
-            <div className="inline-rsvp" aria-live="polite">
-              {!attendance ? (
-                <>
-                  <p>هل ستشاركوننا الفرحة؟</p>
-                  <div className="rsvp-actions">
-                    <button className="accept" onClick={() => chooseAttendance("yes")}>
-                      <b>أؤكد الحضور</b><span>بكل سرور</span>
-                    </button>
-                    <button className="decline" onClick={() => chooseAttendance("no")}>
-                      <b>أعتذر عن الحضور</b><span>مع خالص الدعوات</span>
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <div className={`response-message ${attendance}`} role="status">
-                  <span>{attendance === "yes" ? "♥" : "—"}</span>
-                  <strong>{attendance === "yes" ? "تم تأكيد حضوركم" : "وصلنا اعتذاركم"}</strong>
-                  <p>{attendance === "yes" ? "بحضوركم تكتمل فرحتنا، ننتظركم بكل محبة." : "نقدّر اعتذاركم، ونسأل الله أن يجمعنا بكم على خير."}</p>
-                  <button onClick={() => { setAttendance(""); setShowForm(false); }}>تعديل الرد</button>
-                </div>
-              )}
-            </div>
-          </div>
-        </article>
-
-        <button
-          className="fabric-cover"
-          type="button"
-          onClick={() => setOpened(true)}
-          aria-label="فتح دعوة فيصل وابتسام"
-          disabled={opened}
-        >
-          <span className="fabric-door fabric-door-right"><i /></span>
-          <span className="fabric-door fabric-door-left"><i /></span>
-          <span className="fabric-clasp" aria-hidden="true">
-            <img src="/faisal-ibtisam-seal.png" alt="" />
-          </span>
-          <span className="fabric-title">فيصل وابتسام</span>
-          <span className="fabric-hint">اضغط لفتح الدعوة</span>
-        </button>
-      </section>
-
-      {showForm && (
-        <div className="rsvp-modal" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
-          <form className="rsvp-dialog" onSubmit={submitAttendance}>
-            <button className="rsvp-close" type="button" onClick={() => { setShowForm(false); setAttendance(""); }} aria-label="إغلاق">×</button>
-            <span className="rsvp-heart" aria-hidden="true">{attendance === "yes" ? "♥" : "—"}</span>
-            <h2 id="rsvp-title">{attendance === "yes" ? "تأكيد الحضور" : "الاعتذار عن الحضور"}</h2>
-            <p>{attendance === "yes" ? "اكتب اسمك حتى نسجّل حضورك في قائمة الضيوف." : "اكتب اسمك حتى يصلنا اعتذارك بكل ود."}</p>
-
-            <label><span>الاسم الكامل</span><input value={name} onChange={(e) => setName(e.target.value)} required placeholder="مثال: عبدالله عسيري" autoFocus /></label>
-            <label><span>رقم الجوال <small>اختياري</small></span><input value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" placeholder="05xxxxxxxx" /></label>
-            {attendance === "yes" && (
-              <label><span>عدد المرافقين</span><select value={companions} onChange={(e) => setCompanions(Number(e.target.value))}>{[0,1,2,3,4,5].map((count) => <option key={count} value={count}>{count === 0 ? "بدون مرافقين" : count}</option>)}</select></label>
-            )}
-            <label><span>ملاحظة <small>اختياري</small></span><textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="اكتب ملاحظتك هنا" /></label>
-            {error && <p className="rsvp-error" role="alert">{error}</p>}
-            <button className="rsvp-save" type="submit" disabled={saving}>{saving ? "جاري الحفظ…" : "إرسال الرد"}</button>
-          </form>
-        </div>
+    <main className={`wedding-site ${opened ? "is-revealed" : ""}`} dir="rtl">
+      {!opened && (
+        <section className={`opening-screen ${opening ? "is-opening" : ""}`} aria-label="فتح الدعوة">
+          <div className="opening-glow" />
+          <button type="button" className="envelope-gif-button" onClick={openInvitation} aria-label="اضغط لفتح دعوة فيصل وابتسام">
+            <img src="/envelope-opening.gif" alt="ظرف دعوة فاخر مختوم بالشمع" />
+            <span className="opening-copy"><small>دعوة عقد قران</small><strong>فيصل وابتسام</strong><i>{opening ? "تُفتح دعوتكم…" : "اضغط لفتح الدعوة"}</i></span>
+          </button>
+        </section>
       )}
+
+      <div className="invitation-journey" aria-hidden={!opened}>
+        <section className="invitation-hero section-shell">
+          <div className="ornament ornament-a"><img src="/invitation-ornament-top.png" alt="" /></div>
+          <div className="invitation-card-new">
+            <img className="hero-ornament" src="/invitation-ornament-top.png" alt="" />
+            <img className="hero-monogram" src="/faisal-ebtisam-monogram.png" alt="شعار فيصل وابتسام" />
+            <p className="hero-kicker">دعوة عقد قران</p>
+            <p className="hero-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
+            <h1><span>فيصل</span><i>و</i><span>ابتسام</span></h1>
+            <p className="hero-message">يسرّنا دعوتكم لمشاركتنا فرحة عقد قراننا</p>
+            <div className="hero-rule"><span>◆</span></div>
+            <a href="#countdown">اكتشف تفاصيل المناسبة <b>↓</b></a>
+          </div>
+        </section>
+
+        <section id="countdown" className="countdown-section section-shell">
+          <div className="section-heading-new"><span>موعدنا مع الفرح</span><h2>باقي على لقائنا</h2><p>نعدّ الأيام حتى تكتمل فرحتنا بحضوركم.</p></div>
+          <div className="countdown-grid" aria-label="العد التنازلي">
+            {[
+              [countdown.days, "يوم"], [countdown.hours, "ساعة"], [countdown.minutes, "دقيقة"], [countdown.seconds, "ثانية"],
+            ].map(([value, label]) => <div key={label}><strong>{String(value).padStart(2, "0")}</strong><span>{label}</span></div>)}
+          </div>
+          <img className="countdown-ornament" src="/invitation-ornament-bottom.png" alt="" />
+        </section>
+
+        <section className="event-section section-shell">
+          <div className="section-heading-new"><span>تفاصيل المناسبة</span><h2>حياكم الله</h2><p>وجودكم بيننا هو أجمل تفاصيل هذه الليلة.</p></div>
+          <div className="event-details-grid">
+            <article><b>01</b><span>اليوم والتاريخ</span><strong>الأحد</strong><p>12 ربيع الآخر 1449هـ</p></article>
+            <article><b>02</b><span>وقت الاستقبال</span><strong>9:30 مساءً</strong><p>يسعدنا استقبالكم</p></article>
+            <article><b>03</b><span>مكان المناسبة</span><strong>قاعة الأفراح</strong><p>أبها</p></article>
+          </div>
+          <a className="map-button" href="https://maps.google.com" target="_blank" rel="noreferrer"><span>عرض الموقع على الخريطة</span><b>↗</b></a>
+        </section>
+
+        <section className="attendance-section section-shell">
+          <img className="attendance-ornament" src="/invitation-ornament-top.png" alt="" />
+          <div className="section-heading-new"><span>تأكيد الحضور</span><h2>هل ستشاركوننا الفرحة؟</h2><p>نرجو تسجيل ردكم لمساعدتنا في ترتيب الاستقبال.</p></div>
+          {!submitted ? <div className="attendance-actions-new"><button className="confirm" onClick={() => chooseAttendance("yes")}><strong>أؤكد الحضور</strong><span>بكل سرور</span></button><button onClick={() => chooseAttendance("no")}><strong>أعتذر عن الحضور</strong><span>مع خالص الدعوات</span></button></div> : <div className="submitted-message"><span>{submitted === "yes" ? "♥" : "—"}</span><h3>{submitted === "yes" ? "تم تأكيد حضوركم" : "وصلنا اعتذاركم"}</h3><p>{submitted === "yes" ? "بحضوركم تكتمل فرحتنا، ننتظركم بكل محبة." : "نقدّر اعتذاركم، ونسأل الله أن يجمعنا بكم على خير."}</p><button onClick={() => { setSubmitted(null); setShowForm(true); }}>تعديل الرد</button></div>}
+          <footer>فيصل <i>و</i> ابتسام</footer>
+        </section>
+      </div>
+
+      {showForm && <div className="rsvp-modal" role="dialog" aria-modal="true"><form className="rsvp-dialog" onSubmit={submitAttendance}><button className="rsvp-close" type="button" onClick={() => setShowForm(false)} aria-label="إغلاق">×</button><span className="rsvp-heart">{attendance === "yes" ? "♥" : "—"}</span><h2>{attendance === "yes" ? "تأكيد الحضور" : "الاعتذار عن الحضور"}</h2><p>{attendance === "yes" ? "اكتب اسمك حتى نسجّل حضورك في قائمة الضيوف." : "اكتب اسمك حتى يصلنا اعتذارك بكل ود."}</p><label><span>الاسم الكامل</span><input value={name} onChange={(e) => setName(e.target.value)} required placeholder="مثال: عبدالله عسيري" autoFocus /></label><label><span>رقم الجوال <small>اختياري</small></span><input value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" placeholder="05xxxxxxxx" /></label>{attendance === "yes" && <label><span>عدد المرافقين</span><select value={companions} onChange={(e) => setCompanions(Number(e.target.value))}>{[0,1,2,3,4,5].map((count) => <option key={count} value={count}>{count === 0 ? "بدون مرافقين" : count}</option>)}</select></label>}<label><span>ملاحظة <small>اختياري</small></span><textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="اكتب ملاحظتك هنا" /></label>{error && <p className="rsvp-error">{error}</p>}<button className="rsvp-save" disabled={saving}>{saving ? "جاري الحفظ…" : "إرسال الرد"}</button></form></div>}
     </main>
   );
 }
