@@ -122,6 +122,18 @@ export default function Home() {
           <a className="map-button" href="https://maps.google.com" target="_blank" rel="noreferrer"><span>عرض الموقع على الخريطة</span><b>↗</b></a>
         </section>
 
+        <section className="program-section section-shell">
+          <img className="program-ornament" src="/invitation-ornament-top.png" alt="" />
+          <div className="section-heading-new"><span>ترتيب أمسيتنا</span><h2>برنامج الحفل</h2><p>تفاصيل ليلةٍ ننتظرها بكل فرح.</p></div>
+          <div className="program-timeline">
+            <article><time>9:30</time><span>مساءً</span><div><b>01</b><h3>استقبال الضيوف</h3><p>نستقبلكم بكل محبة وترحيب.</p></div></article>
+            <article><time>10:00</time><span>مساءً</span><div><b>02</b><h3>عقد القران</h3><p>لحظة البداية وفرحة اجتماعنا.</p></div></article>
+            <article><time>10:30</time><span>مساءً</span><div><b>03</b><h3>الضيافة والتهاني</h3><p>وقت نشاركه معكم بالفرح والتهنئة.</p></div></article>
+            <article><time>11:15</time><span>مساءً</span><div><b>04</b><h3>مأدبة العشاء</h3><p>نتشرّف بمشاركتكم ختام أمسيتنا.</p></div></article>
+          </div>
+          <img className="program-ornament program-ornament-bottom" src="/invitation-ornament-bottom.png" alt="" />
+        </section>
+
         <section className="attendance-section section-shell">
           <img className="attendance-ornament" src="/invitation-ornament-top.png" alt="" />
           <div className="section-heading-new"><span>تأكيد الحضور</span><h2>هل ستشاركوننا الفرحة؟</h2><p>نرجو تسجيل ردكم لمساعدتنا في ترتيب الاستقبال.</p></div>
