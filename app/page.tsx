@@ -127,7 +127,7 @@ export default function Home() {
             <article><b>02</b><span>وقت الاستقبال</span><strong>9:30 مساءً</strong><p>يسعدنا استقبالكم</p></article>
             <article><b>03</b><span>مكان المناسبة</span><strong>قاعة الأفراح</strong><p>أبها</p></article>
           </div>
-          <a className="map-button" href="https://maps.google.com" target="_blank" rel="noreferrer"><span>عرض الموقع على الخريطة</span><b>↗</b></a>
+          <a className="map-button" href="https://maps.google.com" target="_blank" rel="noreferrer"><span>عرض الموقع على الخريطة</span></a>
         </section>
 
         <section className="program-section section-shell">
