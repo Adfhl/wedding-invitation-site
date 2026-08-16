@@ -99,8 +99,8 @@
 /* Formal Arabic invitation typography */
 .wedding-site{font-family:"Amiri","Traditional Arabic",serif}
 .section-heading-new h2,.hero-blessing,.hero-wish,.hero-message,.hero-kicker,.event-details-grid strong,.program-timeline h3,.attendance-actions-new strong,.submitted-message h3{font-family:"Amiri","Traditional Arabic",serif}
-.invitation-card-new h1{position:relative;gap:22px;margin:18px 0 12px;padding:8px 44px 14px;font-family:"Amiri","Traditional Arabic",serif;font-size:clamp(62px,11vw,96px);line-height:.9;font-weight:400;font-feature-settings:"liga" 1,"calt" 1,"salt" 1;text-shadow:0 8px 24px rgba(93,99,72,.1)}
-.invitation-card-new h1 span{display:inline-block;transform:skewX(-2deg)}
+.invitation-card-new h1{position:relative;gap:22px;margin:8px 0 2px;padding:8px 50px 24px;font-family:"Noto Nastaliq Urdu","Amiri",serif;font-size:clamp(48px,8vw,76px);line-height:1.75;font-weight:400;font-feature-settings:"liga" 1,"calt" 1;text-shadow:0 8px 24px rgba(93,99,72,.1)}
+.invitation-card-new h1 span{display:inline-block}
 .invitation-card-new h1::before,.invitation-card-new h1::after{position:absolute;top:50%;color:rgba(125,131,98,.7);font-size:.32em;line-height:1;transform:translateY(-50%)}
 .invitation-card-new h1::before{content:"❧";right:0}
 .invitation-card-new h1::after{content:"❧";left:0;transform:translateY(-50%) scaleX(-1)}
@@ -108,6 +108,6 @@
 .invitation-card-new>a,.map-button,.attendance-actions-new button,.rsvp-dialog{font-family:"Huwiya","Amiri",sans-serif}
 
 @media(max-width:700px){
-  .invitation-card-new h1{gap:10px;padding-inline:25px;font-size:56px}
+  .invitation-card-new h1{gap:10px;padding:4px 28px 20px;font-size:44px;line-height:1.8}
   .invitation-card-new h1::before,.invitation-card-new h1::after{font-size:.28em}
 }

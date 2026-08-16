@@ -98,7 +98,7 @@ export default function Home() {
             <p className="hero-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
             <p className="hero-wish">الأيام الجميلة لا تكتمل إلا بكم<br />والأوقات السعيدة تبدأ معكم</p>
             <p className="hero-message">يسعدنا ويشرّفنا دعوتكم بكل الحب لحضور حفل عقد قران</p>
-            <h1><span>ابتسام</span><i>و</i><span>فيصل</span></h1>
+            <h1><span>فيصل وابتسام</span></h1>
             <p className="hero-kicker">وذلك بمشيئة الله تعالى</p>
             <div className="hero-rule"><span>◆</span></div>
             <a href="#countdown">اكتشف تفاصيل المناسبة <b>↓</b></a>
@@ -144,7 +144,6 @@ export default function Home() {
           <img className="attendance-ornament" src="/floral-bouquet.png" alt="" />
           <div className="section-heading-new"><span>تأكيد الحضور</span><h2>هل ستشاركوننا الفرحة؟</h2><p>نرجو تسجيل ردكم لمساعدتنا في ترتيب الاستقبال.</p></div>
           {!submitted ? <div className="attendance-actions-new"><button className="confirm" onClick={() => chooseAttendance("yes")}><strong>أؤكد الحضور</strong><span>بكل سرور</span></button><button onClick={() => chooseAttendance("no")}><strong>أعتذر عن الحضور</strong><span>مع خالص الدعوات</span></button></div> : <div className="submitted-message"><span>{submitted === "yes" ? "♥" : "—"}</span><h3>{submitted === "yes" ? "تم تأكيد حضوركم" : "وصلنا اعتذاركم"}</h3><p>{submitted === "yes" ? "بحضوركم تكتمل فرحتنا، ننتظركم بكل محبة." : "نقدّر اعتذاركم، ونسأل الله أن يجمعنا بكم على خير."}</p><button onClick={() => { setSubmitted(null); setShowForm(true); }}>تعديل الرد</button></div>}
-          <footer>فيصل <i>و</i> ابتسام</footer>
         </section>
       </div>
 
