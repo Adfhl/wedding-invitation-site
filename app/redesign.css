@@ -62,3 +62,16 @@
   .hero-flower-top{width:42vw;right:-14%;top:-1%}
   .hero-flower-bottom{width:38vw;left:-10%;bottom:-2%}
 }
+
+/* Final palette and spacing refinements */
+.wedding-site{--bronze:#7d8362;--bronze-dark:#5d6348;--ink-soft:#696b60}
+.invitation-card-new{background:transparent;border:0;box-shadow:none;backdrop-filter:none}
+.invitation-hero::before,.invitation-hero::after{border-color:rgba(125,131,98,.2)}
+.invitation-card-new h1,.hero-kicker,.section-heading-new span{color:var(--bronze)}
+.program-timeline article{grid-template-columns:104px 78px 1fr;column-gap:22px}
+.program-timeline>article>span{display:block;padding-inline:12px;text-align:center;white-space:nowrap}
+
+@media(max-width:700px){
+  .program-timeline article{grid-template-columns:70px 48px 1fr;column-gap:18px}
+  .program-timeline>article>span{padding-inline:8px}
+}
