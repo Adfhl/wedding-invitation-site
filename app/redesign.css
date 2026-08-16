@@ -148,3 +148,64 @@
   .hero-wish{font-size:16px}
   .hero-rule{width:min(82%,360px);margin-top:15px}
 }
+
+/* Clear hierarchy and safe spacing for the Nastaliq name line */
+.invitation-card-new{gap:0}
+.hero-invitation-flower{margin-bottom:10px}
+.hero-invitation-label{
+  margin:0 0 24px;
+  font-family:"Amiri","Traditional Arabic",serif;
+  font-size:clamp(25px,3.2vw,34px);
+  font-weight:700;
+  line-height:1.35;
+}
+.hero-blessing{
+  margin:0 0 22px;
+  font-size:clamp(19px,2.5vw,24px);
+  line-height:1.85;
+  color:#626558;
+}
+.hero-message{
+  margin:0 0 8px;
+  font-size:clamp(15px,2vw,18px);
+  line-height:1.75;
+  color:#777a6d;
+}
+.invitation-card-new h1{
+  min-height:clamp(132px,16vw,174px);
+  margin:0;
+  padding:6px 0 20px;
+  align-items:center;
+  justify-content:center;
+  font-size:clamp(52px,7vw,72px);
+  line-height:1.85;
+}
+.hero-kicker{
+  position:relative;
+  z-index:2;
+  margin:0 0 20px;
+  font-size:16px;
+  line-height:1.5;
+}
+.hero-wish{
+  margin:0;
+  font-size:clamp(16px,2vw,19px);
+  line-height:1.9;
+  color:#626558;
+}
+
+@media(max-width:700px){
+  .hero-invitation-flower{margin-bottom:7px}
+  .hero-invitation-label{margin-bottom:18px;font-size:27px}
+  .hero-blessing{margin-bottom:17px;font-size:18px;line-height:1.8}
+  .hero-message{max-width:320px;margin-bottom:4px;font-size:14px}
+  .invitation-card-new h1{
+    min-height:122px;
+    gap:14px;
+    padding:4px 0 18px;
+    font-size:clamp(40px,11.5vw,49px);
+    line-height:1.9;
+  }
+  .hero-kicker{margin-bottom:16px;font-size:14px}
+  .hero-wish{font-size:15px;line-height:1.85}
+}
