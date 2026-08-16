@@ -91,8 +91,9 @@ export default function Home() {
         <section className="invitation-hero section-shell">
           <img className="floral-edge floral-edge-right" src="/floral-crescent-right.png" alt="" />
           <img className="floral-edge floral-edge-left" src="/floral-crescent-left.png" alt="" />
+          <img className="hero-flower hero-flower-top" src="/floral-bouquet.png" alt="" />
+          <img className="hero-flower hero-flower-bottom" src="/floral-babys-breath.png" alt="" />
           <div className="invitation-card-new">
-            <img className="hero-ornament" src="/floral-babys-breath.png" alt="" />
             <img className="hero-monogram" src="/faisal-ebtisam-monogram.png" alt="شعار فيصل وابتسام" />
             <p className="hero-blessing">بارك الله لهما وبارك عليهما<br />وجمع بينهما في خير</p>
             <p className="hero-wish">الأيام الجميلة لا تكتمل إلا بكم<br />والأوقات السعيدة تبدأ معكم</p>

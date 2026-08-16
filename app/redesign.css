@@ -46,3 +46,19 @@
   .event-floral-leaves{width:45vw;left:-18%;opacity:.32}
   .program-floral-feature{width:72vw;left:-34%;top:54%;opacity:.68}
 }
+
+/* Invitation-first botanical cover */
+.invitation-hero{background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.98) 0 34%,rgba(250,249,244,.9) 66%,rgba(224,226,207,.68) 100%)}
+.invitation-hero::before{inset:18px;border-color:rgba(133,139,101,.28)}
+.invitation-hero::after{inset:28px;border-color:rgba(157,121,99,.12)}
+.invitation-card-new{width:min(100%,760px);min-height:min(88svh,900px);background:rgba(255,255,252,.7);border-color:rgba(133,139,101,.24);box-shadow:0 28px 85px rgba(92,86,62,.09);backdrop-filter:blur(3px)}
+.hero-flower{position:absolute;z-index:3;height:auto;pointer-events:none}
+.hero-flower-top{width:min(22vw,260px);top:-4%;right:-3%;opacity:.94}
+.hero-flower-bottom{width:min(18vw,210px);bottom:-5%;left:5%;opacity:.86}
+.floral-edge{opacity:.78}
+
+@media(max-width:700px){
+  .invitation-card-new{min-height:92svh;padding-top:66px;padding-bottom:66px}
+  .hero-flower-top{width:42vw;right:-14%;top:-1%}
+  .hero-flower-bottom{width:38vw;left:-10%;bottom:-2%}
+}
